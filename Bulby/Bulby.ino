@@ -33,6 +33,7 @@ finestra* frame;// = finestra();
 // The setup() function runs once each time the micro-controller starts
 void setup()
 {
+	//test
 	Serial.begin(9600);
 	Serial.println("START");
 	delay(10);
