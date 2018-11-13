@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{e3868617-2597-47f1-8436-de1ee57aa882}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ClInclude Include="$(MSBuildThisFileDirectory)Adafruit_GFX_Library_master.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)Adafruit_GFX.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Adafruit_SPITFT.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)Adafruit_SPITFT_Macros.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)gfxfont.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Adafruit_GFX.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Adafruit_SPITFT.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)glcdfont.c" />
+  </ItemGroup>
+</Project>
