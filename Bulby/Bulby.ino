@@ -5,9 +5,7 @@
 	Created:	07/11/2018 17:27:20
 	Author:     Giacomo Orsenigo
 */
-#include "luceButton.h"
 #include "tab3.h"
-#include "finestra.h"
 #include "tab2.h"
 #include "tab1.h"
 #include "finestra.h"
