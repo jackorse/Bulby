@@ -54,6 +54,7 @@
     <Import Project="..\TFTLCD-Library-master\TFTLCD-Library-master.vcxitems" Label="Shared" />
     <Import Project="..\Adafruit-GFX-Library-master\Adafruit-GFX-Library-master.vcxitems" Label="Shared" />
     <Import Project="..\Adafruit_TouchScreen-master\Adafruit_TouchScreen-master.vcxitems" Label="Shared" />
+    <Import Project="..\Display\Display.vcxitems" Label="Shared" />
   </ImportGroup>
   <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
@@ -92,7 +93,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(ProjectDir)..\Bulby;$(ProjectDir)..\TFTLCD-Library-master;$(ProjectDir)..\Adafruit-GFX-Library-master;$(ProjectDir)..\Adafruit_TouchScreen-master;D:\Programmi\Arduino\libraries;D:\Programmi\Arduino\hardware\arduino\avr\libraries;$(ProjectDir)..\..\libraries;D:\Programmi\Arduino\hardware\arduino\avr\cores\arduino;D:\Programmi\Arduino\hardware\arduino\avr\variants\standard;D:\Programmi\Arduino\hardware\tools\avr\avr\include;D:\Programmi\Arduino\hardware\tools\avr\avr\include\avr;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)..\Bulby;$(ProjectDir)..\Display;D:\Programmi\Arduino\hardware\arduino\avr\libraries\SPI\src;$(ProjectDir)..\TFTLCD-Library-master;$(ProjectDir)..\Adafruit-GFX-Library-master;$(ProjectDir)..\Adafruit_TouchScreen-master;D:\Programmi\Arduino\libraries;D:\Programmi\Arduino\hardware\arduino\avr\libraries;$(ProjectDir)..\..\..\Documents\Arduino\libraries;D:\Programmi\Arduino\hardware\arduino\avr\cores\arduino;D:\Programmi\Arduino\hardware\arduino\avr\variants\standard;D:\Programmi\Arduino\hardware\tools\avr\avr\include;D:\Programmi\Arduino\hardware\tools\avr\avr\include\avr;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.8.1\include;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.2\include;D:\Programmi\Arduino\hardware\tools\avr\lib\gcc\avr\4.9.3\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <ForcedIncludeFiles>$(ProjectDir)__vm\.Bulby.vsarduino.h;%(ForcedIncludeFiles)</ForcedIncludeFiles>
       <IgnoreStandardIncludePath>false</IgnoreStandardIncludePath>
       <PreprocessorDefinitions>__AVR_ATmega328p__;__AVR_ATmega328P__;_VMDEBUG=1;F_CPU=16000000L;ARDUINO=10807;ARDUINO_AVR_UNO;ARDUINO_ARCH_AVR;__cplusplus=201103L;_VMICRO_INTELLISENSE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
@@ -105,36 +106,10 @@
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="abstractTab.h" />
-    <ClInclude Include="button.h" />
-    <ClInclude Include="finestra.h" />
-    <ClInclude Include="GenericTab.h" />
-    <ClInclude Include="homeButton.h" />
-    <ClInclude Include="homeTab.h" />
-    <ClInclude Include="luceButton.h" />
-    <ClInclude Include="tab1.h" />
-    <ClInclude Include="tab2.h" />
-    <ClInclude Include="tab3.h" />
-    <ClInclude Include="tabButton.h" />
-    <ClInclude Include="toggleButton.h" />
     <ClInclude Include="__vm\.Bulby.vsarduino.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Bulby.ino" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="abstractTab.cpp" />
-    <ClCompile Include="button.cpp" />
-    <ClCompile Include="finestra.cpp" />
-    <ClCompile Include="GenericTab.cpp" />
-    <ClCompile Include="homeButton.cpp" />
-    <ClCompile Include="homeTab.cpp" />
-    <ClCompile Include="luceButton.cpp" />
-    <ClCompile Include="tab1.cpp" />
-    <ClCompile Include="tab2.cpp" />
-    <ClCompile Include="tab3.cpp" />
-    <ClCompile Include="tabButton.cpp" />
-    <ClCompile Include="toggleButton.cpp" />
   </ItemGroup>
   <PropertyGroup>
     <DebuggerFlavor>VisualMicroDebugger</DebuggerFlavor>

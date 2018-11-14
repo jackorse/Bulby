@@ -9,6 +9,7 @@
 #include "tab2.h"
 #include "tab1.h"
 #include "finestra.h"
+#include<spi.h>
 // Define User Types below here or use a .h file
 //
 

@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{3443f91a-59fc-491a-83c6-aa9f9f6cbc58}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)abstractTab.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)button.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)finestra.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)GenericTab.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)homeTab.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)tab1.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)tab2.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)tab3.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)tabButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)toggleButton.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)abstractTab.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)button.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)finestra.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)GenericTab.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)homeTab.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)luceButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)tab1.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)tab2.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)tab3.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)tabButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)toggleButton.cpp" />
+  </ItemGroup>
+</Project>
