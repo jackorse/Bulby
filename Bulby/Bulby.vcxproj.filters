@@ -18,82 +18,8 @@
     <ClInclude Include="__vm\.Bulby.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="abstractTab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="finestra.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="GenericTab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="homeButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="homeTab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="luceButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tab1.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tab2.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tab3.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="tabButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="toggleButton.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Bulby.ino" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="abstractTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="button.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="finestra.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GenericTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="homeButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="homeTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="luceButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tab1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tab2.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tab3.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="tabButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="toggleButton.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>
