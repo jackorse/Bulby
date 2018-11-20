@@ -51,7 +51,9 @@ void CLuce::setLuce(String colore, int intensita)
 
 void CLuce::setColore(String colore)
 {
-	if (colore == "rosso")
+	if (this->colore == colore)
+		return;
+	else if (colore == "rosso")
 		ir.rosso();
 	else if (colore == "giallo")
 		ir.giallo();
