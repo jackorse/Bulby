@@ -24,7 +24,7 @@
 #define BLU 0xFF8877
 #define ROSSO 0xFF9867
 #define BIANCO 0xFFA857
-#define VERDE0x FFD827
+#define VERDE 0xFFD827
 #define ARANCIONE 0xFFE817
 //#define ROSA 0xFFF00F
 
@@ -34,6 +34,7 @@ public:
 	MyIR();
 	~MyIR();
 	void accendi();
+	void spegni();
 	void rosso();
 	void verde();
 	void blu();
