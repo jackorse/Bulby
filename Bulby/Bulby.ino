@@ -42,7 +42,6 @@ void setup()
 	frame = new finestra();
 	Serial.println("fine setup");
 	delay(10);
-
 }
 // Add the main program code into the continuous loop() function
 void loop()
