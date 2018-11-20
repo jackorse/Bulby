@@ -27,11 +27,13 @@ CLuce::~CLuce()
 void CLuce::accendi()
 {
 	ir.accendi();
+	accesa = true;
 }
 
 void CLuce::spegni()
 {
 	ir.spegni();
+	accesa = false;
 }
 
 void CLuce::initBluetooth()
@@ -44,9 +46,9 @@ void CLuce::initBluetooth()
 
 void CLuce::setLuce(String colore, int intensita)
 {
-	accesa = false;
-	this->colore = colore;
-	this->intensita = intensita;
+	accendi();
+	setColore(colore);
+	setIntensita(intensita);
 }
 
 void CLuce::setColore(String colore)
