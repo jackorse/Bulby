@@ -28,7 +28,7 @@
 // between X+ and X- Use any multimeter to read it
 // For the one we're using, its 300 ohms across the X plate
 //TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
-CLuce luce("bianco");
+CLuce *luce;
 finestra* frame;// = finestra();
 // The setup() function runs once each time the micro-controller starts
 void setup()
@@ -38,15 +38,16 @@ void setup()
 	delay(10);
 	Serial.println("sto per disegnareeee");
 	//frame->getAttiva()->draw();
-	pinMode(13, OUTPUT);
-	frame = new finestra();
+	//pinMode(13, OUTPUT);
+	//frame = new finestra();
+	luce = new CLuce("bianco");
 	Serial.println("fine setup");
 	delay(10);
 }
 // Add the main program code into the continuous loop() function
 void loop()
 {
-	int tab = frame->getTab()->checkBottoni();
-	frame->setTab(tab);
-	luce.checkBluetooth();
+	//int tab = frame->getTab()->checkBottoni();
+	//frame->setTab(tab);
+	luce->checkBluetooth();
 }

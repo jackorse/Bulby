@@ -53,6 +53,7 @@ void CLuce::setLuce(String colore, int intensita)
 
 void CLuce::setColore(String colore)
 {
+	Serial.println(colore);
 	if (this->colore == colore)
 		return;
 	else if (colore == "rosso")
@@ -79,6 +80,7 @@ void CLuce::setColore(String colore)
 		ir.RGBveloce();
 	else return;
 	this->colore = colore;
+	Serial.println(colore);
 }
 
 void CLuce::setIntensita(int intensita)
