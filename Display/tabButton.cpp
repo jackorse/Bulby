@@ -10,7 +10,6 @@ tabButton::tabButton(Adafruit_GFX* gfx, int x, int y, int numTab, TouchScreen* t
 	: button(gfx, x, y, 50, 50, WHITE, BLACK, itoa(numTab, NULL, 10), ts)
 {
 	this->numTab = numTab;
-	delay(1);
 }
 
 int tabButton::getNumTab()
