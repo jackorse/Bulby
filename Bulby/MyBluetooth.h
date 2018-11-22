@@ -10,5 +10,6 @@ public:
 	MyBluetooth();
 	~MyBluetooth();
 	String leggiColore();
+	void inviaColore(String colore);
 };
 

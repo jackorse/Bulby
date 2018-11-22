@@ -23,3 +23,8 @@ String MyBluetooth::leggiColore()
 		return colore;
 	else return "";
 }
+
+void MyBluetooth::inviaColore(String colore)
+{
+	SoftwareSerial::write(colore.c_str());
+}
