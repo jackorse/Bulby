@@ -8,8 +8,8 @@
 #define multicolorVeloce 0xFFB24D
 #define multicolorLento 0xFF58A7
 
-#define AU_INT ???
-#define DIM_INT ???
+#define AU_INT 0xFF906F //20 volte
+#define DIM_INT 0xFFB847 //20 volte
 
 #define GIALLO_ARANCIO 0xFF02FD
 #define VIOLA 0xFF20DF

@@ -85,7 +85,16 @@ void CLuce::setColore(String colore)
 
 void CLuce::setIntensita(int intensita)
 {
-	this->intensita = intensita;
+	int diff = this->intensita - intensita;
+	if (diff >= 0)
+		for (int i = 0; i < diff; i++)
+			ir.aumentaIntensita();
+	else
+	{
+		for (int i = diff; i < 0; i++)
+			ir.diminuisciIntensita();
+	}
+	this->intensita = intensita / 5;	//trasforma da % a 1-20
 }
 
 String CLuce::getColore()
@@ -95,7 +104,7 @@ String CLuce::getColore()
 
 int CLuce::getIntensita()
 {
-	return intensita;
+	return intensita * 5; //trasforma in %
 }
 
 void CLuce::checkBluetooth()
@@ -107,5 +116,5 @@ void CLuce::checkBluetooth()
 
 void CLuce::checkDisplay()
 {
-	
+
 }

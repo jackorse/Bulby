@@ -78,10 +78,10 @@ void MyIR::RGBlento()
 
 void MyIR::aumentaIntensita()
 {
-	//sendNEC(AU_INT, 32);
+	sendNEC(AU_INT, 32);
 }
 
 void MyIR::diminuisciIntensita()
 {
-	//sendNEC(DIM_INT, 32);
+	sendNEC(DIM_INT, 32);
 }
