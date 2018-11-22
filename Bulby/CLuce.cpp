@@ -85,16 +85,19 @@ void CLuce::setColore(String colore)
 
 void CLuce::setIntensita(int intensita)
 {
-	int diff = this->intensita - intensita;
-	if (diff >= 0)
-		for (int i = 0; i < diff; i++)
-			ir.aumentaIntensita();
-	else
+	if (intensita >= 0 && intensita <= 100)
 	{
-		for (int i = diff; i < 0; i++)
-			ir.diminuisciIntensita();
+		int diff = this->intensita - intensita;
+		if (diff >= 0)
+			for (int i = 0; i < diff; i++)
+				ir.aumentaIntensita();
+		else
+		{
+			for (int i = diff; i < 0; i++)
+				ir.diminuisciIntensita();
+		}
+		this->intensita = intensita / 5;	//trasforma da % a 1-20
 	}
-	this->intensita = intensita / 5;	//trasforma da % a 1-20
 }
 
 String CLuce::getColore()
@@ -110,8 +113,12 @@ int CLuce::getIntensita()
 void CLuce::checkBluetooth()
 {
 	String letto = bt.leggi();
-	if (colore != "")
-		setColore(colore);
+	int intens = letto.toInt();
+	if (letto != "")
+	{
+		setColore(letto);
+		setIntensita(intens);
+	}
 
 }
 
