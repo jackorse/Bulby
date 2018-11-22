@@ -104,3 +104,8 @@ void CLuce::checkBluetooth()
 	if (colore != "")
 		setColore(colore);
 }
+
+void CLuce::checkDisplay()
+{
+	
+}

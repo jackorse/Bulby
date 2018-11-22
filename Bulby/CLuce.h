@@ -27,5 +27,6 @@ public:
 	String getColore();
 	int getIntensita();
 	void checkBluetooth();
+	void checkDisplay();
 };
 
