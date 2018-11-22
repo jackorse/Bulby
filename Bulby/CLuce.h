@@ -2,6 +2,9 @@
 #include"MyIR.h"
 #include<WString.h>
 #include"MyBluetooth.h"
+/*
+* Classe che gestisce la luce
+*/
 class CLuce
 {
 private:

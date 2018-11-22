@@ -28,6 +28,9 @@
 #define ARANCIONE 0xFFE817
 //#define ROSA 0xFFF00F
 
+/**
+* Classe che gestisce il LED IR
+*/
 class MyIR :public IRsend
 {
 public:
