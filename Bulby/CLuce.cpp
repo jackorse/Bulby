@@ -109,9 +109,10 @@ int CLuce::getIntensita()
 
 void CLuce::checkBluetooth()
 {
-	String colore = bt.leggiColore();
+	String letto = bt.leggi();
 	if (colore != "")
 		setColore(colore);
+
 }
 
 void CLuce::checkDisplay()

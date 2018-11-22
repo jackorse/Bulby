@@ -13,18 +13,17 @@ MyBluetooth::~MyBluetooth()
 {
 }
 
-String MyBluetooth::leggiColore()
+String MyBluetooth::leggi()
 {
-	String colore;
+	String ris;
 	if (available() > 0)
-		colore = readString();
-	if (colore != "")Serial.println(colore);
-	if (colore.startsWith == "rosso" || colore == "giallo" || colore == "verde" || colore == "blu" || colore == "arancione" || colore == "azzurro" || colore == "bianco" || colore == "giallancione" || colore == "rosa" || colore == "rgbLento" || colore == "rgbVeloce")
-		return colore;
-	else return "";
+		ris = readString();
+	//if (colore.startsWith == "rosso" || colore == "giallo" || colore == "verde" || colore == "blu" || colore == "arancione" || colore == "azzurro" || colore == "bianco" || colore == "giallancione" || colore == "rosa" || colore == "rgbLento" || colore == "rgbVeloce")
+	return ris;
+	//else return "";
 }
 
-void MyBluetooth::inviaColore(String colore)
+void MyBluetooth::invia(String colore)
 {
 	SoftwareSerial::write(colore.c_str());
 }

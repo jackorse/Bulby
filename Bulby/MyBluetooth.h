@@ -9,7 +9,7 @@ class MyBluetooth :public SoftwareSerial
 public:
 	MyBluetooth();
 	~MyBluetooth();
-	String leggiColore();
-	void inviaColore(String colore);
+	String leggi();
+	void invia(String text);
 };
 
