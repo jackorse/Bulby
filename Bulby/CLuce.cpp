@@ -54,12 +54,12 @@ void CLuce::setLuce(String colore, int intensita)
 
 void CLuce::setColore(String colore)
 {
-	Serial.println(colore);
+	Serial.println("colore: " + colore);
 	if (this->colore == colore)
 		return;
-	else if (colore == "rosso")
+	else if (colore.startsWith( "rosso"))
 		ir.rosso();
-	else if (colore == "giallo")
+	else if (colore.startsWith( "giallo"))
 		ir.giallo();
 	else if (colore == "verde")
 		ir.verde();
@@ -86,18 +86,24 @@ void CLuce::setColore(String colore)
 
 void CLuce::setIntensita(int intensita)
 {
+	intensita /= 5;			//trasforma da % a 1-20
+	Serial.println("Intensita: " + String(intensita));
 	if (intensita >= 0 && intensita <= 100)
 	{
 		int diff = this->intensita - intensita;
 		if (diff >= 0)
-			for (int i = 0; i < diff; i++)
-				ir.aumentaIntensita();
+			for (int i = 0; i < diff; i++) {
+				ir.diminuisciIntensita();
+				delay(50);
+			}
 		else
 		{
-			for (int i = diff; i < 0; i++)
-				ir.diminuisciIntensita();
+			for (int i = diff; i < 0; i++) {
+				ir.aumentaIntensita();
+				delay(50);
+			}
 		}
-		this->intensita = intensita / 5;	//trasforma da % a 1-20
+		this->intensita = intensita;
 	}
 }
 
