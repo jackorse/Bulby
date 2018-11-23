@@ -52,7 +52,7 @@ void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
 	setColore(colore);
-	this->colore.setIntensita(20);
+	this->getAttivo()->setIntensita(20);
 	setIntensita(intensita);
 }
 
@@ -149,10 +149,10 @@ int CLuce::getIntensita()
 	return getAttivo()->getIntensita() * 5; //trasforma in %
 }
 
-CColore * CLuce::getAttivo()
+CColore* CLuce::getAttivo()
 {
-	for each (CColore col in colore) {
-		if (colore->isAttiva())
+	for (int i = 0; i < NUMCOLORI;i++) {
+		if (colore[i].isAttiva())
 			return colore;
 	}
 	return nullptr;

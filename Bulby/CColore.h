@@ -1,4 +1,5 @@
 #pragma once
+#include<WString.h>
 class CColore
 {
 private:
