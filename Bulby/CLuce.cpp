@@ -48,6 +48,7 @@ void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
 	setColore(colore);
+	this->intensita = 20;
 	setIntensita(intensita);
 }
 
