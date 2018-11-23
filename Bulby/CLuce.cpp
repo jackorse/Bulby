@@ -57,9 +57,9 @@ void CLuce::setColore(String colore)
 	Serial.println("colore: " + colore);
 	if (this->colore == colore)
 		return;
-	else if (colore.startsWith( "rosso"))
+	else if (colore.startsWith("rosso"))
 		ir.rosso();
-	else if (colore.startsWith( "giallo"))
+	else if (colore.startsWith("giallo"))
 		ir.giallo();
 	else if (colore == "verde")
 		ir.verde();
@@ -119,13 +119,23 @@ int CLuce::getIntensita()
 
 void CLuce::checkBluetooth()
 {
+	bool isColore = true;
 	String letto = bt.leggi();
-	int intens = letto.toInt();
 	if (letto != "")
 	{
-		setColore(letto);
-		setIntensita(intens);
+		for (int i = 0; i < letto.length(); i++)
+			if (letto[i] >= '0'&&letto[i] <= '9')
+				isColore = false;
+		if (isColore)
+			setColore(letto);
+		else
+			setIntensita(letto.toInt());
 	}
+	//if (letto != "")
+	//{
+	//	setColore(letto);
+	//	setIntensita(intens);
+	//}
 
 }
 
