@@ -29,7 +29,6 @@
 // For the one we're using, its 300 ohms across the X plate
 //TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
 CLuce *luce;
-finestra* frame;// = finestra();
 // The setup() function runs once each time the micro-controller starts
 void setup()
 {
@@ -47,7 +46,6 @@ void setup()
 // Add the main program code into the continuous loop() function
 void loop()
 {
-	//int tab = frame->getTab()->checkBottoni();
-	//frame->setTab(tab);
+
 	luce->checkBluetooth();
 }

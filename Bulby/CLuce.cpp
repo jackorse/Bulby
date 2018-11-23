@@ -3,18 +3,21 @@
 
 CLuce::CLuce()
 {
+	frame = new finestra();
 	initBluetooth();
 	setLuce("bianco", 100);
 }
 
 CLuce::CLuce(String colore, int intensita)
 {
+	frame = new finestra();
 	initBluetooth();
 	setLuce(colore, intensita);
 }
 
 CLuce::CLuce(String colore)
 {
+	frame = new finestra();
 	initBluetooth();
 	setLuce(colore, 100);
 }
@@ -22,6 +25,7 @@ CLuce::CLuce(String colore)
 
 CLuce::~CLuce()
 {
+	delete frame;
 }
 
 void CLuce::accendi()
@@ -141,5 +145,16 @@ void CLuce::checkBluetooth()
 
 void CLuce::checkDisplay()
 {
-
+	int ris = frame->getTab()->checkBottoni();
+	if (ris >= 0 && ris <= 3)
+		frame->setTab(ris);
+	else if (ris == 10)	//pulsante luce premuto
+		if (accesa) {
+			spegni();
+			bt.invia("spegni");
+		}
+		else {
+			accendi();
+			bt.invia("accendi");
+		}
 }

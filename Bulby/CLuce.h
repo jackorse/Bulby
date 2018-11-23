@@ -8,6 +8,7 @@
 class CLuce
 {
 private:
+	finestra* frame;
 	MyIR ir;
 	MyBluetooth bt;
 	String colore;
