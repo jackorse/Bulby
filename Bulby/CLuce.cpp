@@ -52,39 +52,67 @@ void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
 	setColore(colore);
-	this->intensita = 20;
+	this->colore.setIntensita(20);
 	setIntensita(intensita);
 }
 
 void CLuce::setColore(String colore)
 {
 	Serial.println("colore: " + colore);
-	if (this->colore == colore)
+	if (this->getAttivo()->getColore() == colore)
 		return;
-	else if (colore.startsWith("rosso"))
+	else if (colore.startsWith("rosso")) {
+		this->colore[ROSSO].attiva();
 		ir.rosso();
-	else if (colore.startsWith("giallo"))
+	}
+	else if (colore.startsWith("giallo")) {
+		this->colore[GIALLO].attiva();
 		ir.giallo();
-	else if (colore == "verde")
+	}
+	else if (colore == "verde") {
 		ir.verde();
-	else if (colore == "blu")
+		this->colore[VERDE].attiva();
+	}
+	else if (colore == "blu") {
 		ir.blu();
-	else if (colore == "arancione")
+		this->colore[BLU].attiva();
+	}
+	else if (colore == "arancione") {
+
 		ir.arancione();
-	else if (colore == "azzurro")
+		this->colore[ARANCIONE].attiva();
+	}
+	else if (colore == "azzurro") {
+
 		ir.azzurro();
-	else if (colore == "bianco")
+		this->colore[AZZURRO].attiva();
+	}
+	else if (colore == "bianco") {
+
 		ir.bianco();
-	else if (colore == "giallancione")
+		this->colore[BIANCO].attiva();
+	}
+	else if (colore == "giallancione") {
+
 		ir.giallancione();
-	else if (colore == "rosa")
+		this->colore[GIALLO_ARANCIO].attiva();
+	}
+	else if (colore == "rosa") {
+
 		ir.rosa();
-	else if (colore == "rgbLento")
+		this->colore[ROSA].attiva();
+	}
+	else if (colore == "rgbLento") {
+
 		ir.RGBlento();
-	else if (colore == "rgbVeloce")
+		this->colore[multicolorLento].attiva();
+	}
+	else if (colore == "rgbVeloce") {
+
 		ir.RGBveloce();
+		this->colore[multicolorVeloce].attiva();
+	}
 	else return;
-	this->colore = colore;
 	Serial.println(colore);
 }
 
@@ -94,7 +122,7 @@ void CLuce::setIntensita(int intensita)
 	Serial.println("Intensita: " + String(intensita));
 	if (intensita >= 0 && intensita <= 100)
 	{
-		int diff = this->intensita - intensita;
+		int diff = this->getAttivo()->getIntensita() - intensita;
 		if (diff >= 0)
 			for (int i = 0; i < diff; i++) {
 				ir.diminuisciIntensita();
@@ -107,18 +135,27 @@ void CLuce::setIntensita(int intensita)
 				delay(50);
 			}
 		}
-		this->intensita = intensita;
+		this->getAttivo()->setIntensita(intensita);
 	}
 }
 
 String CLuce::getColore()
 {
-	return colore;
+	return getAttivo()->getColore();
 }
 
 int CLuce::getIntensita()
 {
-	return intensita * 5; //trasforma in %
+	return getAttivo()->getIntensita() * 5; //trasforma in %
+}
+
+CColore * CLuce::getAttivo()
+{
+	for each (CColore col in colore) {
+		if (colore->isAttiva())
+			return colore;
+	}
+	return nullptr;
 }
 
 void CLuce::checkBluetooth()

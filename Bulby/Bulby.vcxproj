@@ -106,6 +106,7 @@
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="CColore.h" />
     <ClInclude Include="CLuce.h" />
     <ClInclude Include="MyBluetooth.h" />
     <ClInclude Include="MyIR.h" />
@@ -115,6 +116,7 @@
     <None Include="Bulby.ino" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="CColore.cpp" />
     <ClCompile Include="CLuce.cpp" />
     <ClCompile Include="MyBluetooth.cpp" />
     <ClCompile Include="MyIR.cpp" />
