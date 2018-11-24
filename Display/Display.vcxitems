@@ -20,6 +20,7 @@
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)abstractTab.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)button.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)CColore.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)finestra.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GenericTab.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h" />
@@ -34,6 +35,7 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)abstractTab.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)button.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)CColore.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)finestra.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GenericTab.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp" />

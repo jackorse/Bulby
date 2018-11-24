@@ -4,9 +4,11 @@
 
 #include "finestra.h"
 
-finestra::finestra()
+finestra::finestra(bool * accesa, CColore * colore)
 	:Adafruit_TFTLCD(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET)
 {
+	this->colore = colore;
+	this->accesa = accesa;
 	reset();
 	begin(0x9341);
 	ts = new TouchScreen(XP, YP, XM, YM, 300);
@@ -16,6 +18,7 @@ finestra::finestra()
 	tab->draw();
 	index = 0;
 }
+
 
 finestra::~finestra()
 {
@@ -39,10 +42,10 @@ void finestra::setTab(int index)
 			tab = new homeTab(this, ts);
 			break;
 		case 1:
-			tab = new tab1(this, ts);
+			tab = new tab1(this, ts,accesa);
 			break;
 		case 2:
-			tab = new tab2(this, ts);
+			tab = new tab2(this, ts, colore);
 			break;
 		case 3:
 			tab = new tab3(this, ts);

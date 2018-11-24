@@ -4,11 +4,14 @@
 
 #include "tab1.h"
 
-tab1::tab1(Adafruit_GFX* gfx, TouchScreen* ts)
+tab1::tab1(Adafruit_GFX* gfx, TouchScreen* ts, bool *accesa)
 	:GenericTab(gfx, ts)
 {
+	this->accesa = accesa;
 	luce = new luceButton(gfx, 50, 70, ts);	//(gfx, 50, 50, 100, 50, 5, YELLOW, BLACK, "LUCE", 10);
 	tabs[0]->setDisabled();
+	if (accesa)
+		luce->press(true);
 }
 
 tab1::~tab1()

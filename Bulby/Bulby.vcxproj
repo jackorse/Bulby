@@ -106,7 +106,6 @@
     <ProjectCapability Include="VisualMicro" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="CColore.h" />
     <ClInclude Include="CLuce.h" />
     <ClInclude Include="MyBluetooth.h" />
     <ClInclude Include="MyIR.h" />
@@ -116,7 +115,6 @@
     <None Include="Bulby.ino" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CColore.cpp" />
     <ClCompile Include="CLuce.cpp" />
     <ClCompile Include="MyBluetooth.cpp" />
     <ClCompile Include="MyIR.cpp" />
@@ -129,7 +127,7 @@
   </ImportGroup>
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties debug.view.FreeMemory="1" arduino.upload.port="COM7" />
+      <UserProperties arduino.build.skip_library_file_if_exists_in_project="0" debug.view.FreeMemory="1" arduino.build.auto_discover_includes="1" arduino.upload.port="COM7" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

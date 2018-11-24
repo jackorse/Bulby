@@ -3,21 +3,21 @@
 
 CLuce::CLuce()
 {
-	frame = new finestra();
+	frame = new finestra(&accesa,getAttivo());
 	initBluetooth();
 	setLuce("bianco", 100);
 }
 
 CLuce::CLuce(String colore, int intensita)
 {
-	frame = new finestra();
+	frame = new finestra(&accesa, getAttivo());
 	initBluetooth();
 	setLuce(colore, intensita);
 }
 
 CLuce::CLuce(String colore)
 {
-	frame = new finestra();
+	frame = new finestra(&accesa, getAttivo());
 	initBluetooth();
 	setLuce(colore, 100);
 }
@@ -62,56 +62,57 @@ void CLuce::setColore(String colore)
 	if (this->getAttivo()->getColore() == colore)
 		return;
 	this->getAttivo()->disattiva();
+	resetDisplay();
 	if (colore.startsWith("rosso")) {
-		this->colore[ROSSO].attiva();
+		this->colori[ROSSO].attiva();
 		ir.rosso();
 	}
 	else if (colore.startsWith("giallo")) {
-		this->colore[GIALLO].attiva();
+		this->colori[GIALLO].attiva();
 		ir.giallo();
 	}
 	else if (colore == "verde") {
 		ir.verde();
-		this->colore[VERDE].attiva();
+		this->colori[VERDE].attiva();
 	}
 	else if (colore == "blu") {
 		ir.blu();
-		this->colore[BLU].attiva();
+		this->colori[BLU].attiva();
 	}
 	else if (colore == "arancione") {
 
 		ir.arancione();
-		this->colore[ARANCIONE].attiva();
+		this->colori[ARANCIONE].attiva();
 	}
 	else if (colore == "azzurro") {
 
 		ir.azzurro();
-		this->colore[AZZURRO].attiva();
+		this->colori[AZZURRO].attiva();
 	}
 	else if (colore == "bianco") {
 
 		ir.bianco();
-		this->colore[BIANCO].attiva();
+		this->colori[BIANCO].attiva();
 	}
 	else if (colore == "giallancione") {
 
 		ir.giallancione();
-		this->colore[GIALLO_ARANCIO].attiva();
+		this->colori[GIALLO_ARANCIO].attiva();
 	}
 	else if (colore == "rosa") {
 
 		ir.rosa();
-		this->colore[ROSA].attiva();
+		this->colori[ROSA].attiva();
 	}
 	else if (colore == "rgbLento") {
 
 		ir.RGBlento();
-		this->colore[multicolorLento].attiva();
+		this->colori[multicolorLento].attiva();
 	}
 	else if (colore == "rgbVeloce") {
 
 		ir.RGBveloce();
-		this->colore[multicolorVeloce].attiva();
+		this->colori[multicolorVeloce].attiva();
 	}
 	else return;
 	Serial.println(colore);
@@ -137,6 +138,7 @@ void CLuce::setIntensita(int intensita)
 			}
 		}
 		this->getAttivo()->setIntensita(intensita);
+		resetDisplay();
 	}
 }
 
@@ -153,8 +155,8 @@ int CLuce::getIntensita()
 CColore* CLuce::getAttivo()
 {
 	for (int i = 0; i < NUMCOLORI;i++) {
-		if (colore[i].isAttiva())
-			return colore;
+		if (colori[i].isAttiva())
+			return colori;
 	}
 	return nullptr;
 }
@@ -200,4 +202,20 @@ void CLuce::checkDisplay()
 			accendi();
 			bt.invia("accendi");
 		}
+	else if (ris == 20)
+	{
+		setIntensita(getIntensita() - 5);
+		bt.invia((String)getIntensita());
+	}
+	else if (ris == 30)
+	{
+		//setIntensita(getIntensita() + 5);
+		//bt.invia((String)getIntensita());
+	}
+}
+
+void CLuce::resetDisplay()
+{
+	delete frame;
+	frame = new finestra(&accesa, getAttivo());
 }

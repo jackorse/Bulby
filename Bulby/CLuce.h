@@ -31,7 +31,7 @@ private:
 	finestra* frame;
 	MyIR ir;
 	MyBluetooth bt;
-	CColore colore[NUMCOLORI];
+	CColore colori[NUMCOLORI];
 	bool accesa;
 public:
 	CLuce();
@@ -49,5 +49,6 @@ public:
 	CColore* getAttivo();
 	void checkBluetooth();
 	void checkDisplay();
+	void resetDisplay();
 };
 

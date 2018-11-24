@@ -20,7 +20,7 @@ button::~button()
 void button::drawButton()
 {
 	Adafruit_GFX_Button::drawButton(true);
-	while (ts->isTouching()) { Serial.println("aspetto..."); }
+	while (ts->isTouching());
 	Adafruit_GFX_Button::drawButton();
 }
 
@@ -42,7 +42,7 @@ bool button::checkTouch()
 	//Serial.println((String)x + "    |      " + (String)y);
 	if (p.z > 200 && contains(x, y))
 	{
-		Serial.println("pigiatooo");
+		//Serial.println("pigiatooo");
 		//press(!isPressed()) <<<< per qualche strano motivo non gli piace
 		if (isPressed())
 			press(false);

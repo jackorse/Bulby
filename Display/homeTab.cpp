@@ -31,7 +31,7 @@ void homeTab::draw()
 int homeTab::checkBottoni()
 {
 	TSPoint p = ts->getPoint();
-	Serial.println("x: " + (String)p.x + " y: " +(String) p.y);
+	//Serial.println("x: " + (String)p.x + " y: " +(String) p.y);
 	if (p.x >= 0 && p.x <= 1023 && p.y >= 0 && p.y <= 1023 && p.z >= 100)
 		return 1;
 	return -1;

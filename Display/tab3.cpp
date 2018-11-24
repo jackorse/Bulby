@@ -15,7 +15,7 @@ void tab3::draw()
 	GenericTab::draw();
 	gfx->setCursor(50, 50);
 	gfx->setTextColor(BLACK);
-	gfx->println("TAB3");
+	gfx->println("COLORE");
 	gfx->println("\n  altre impostazioni.....");
 	gfx->println("\n  Coming soon...");
 }

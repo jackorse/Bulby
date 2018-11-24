@@ -8,20 +8,21 @@
 #else
 	#include "WProgram.h"
 #endif
-
 #include"GenericTab.h"
+#include"CColore.h"
 
 class tab2:public GenericTab
 {
 private:
 	button *piu;
-	button *meno=NULL;
-	int intensita;
+	button *meno;
+	CColore *colore;
  public:
-	tab2(Adafruit_GFX* gfx, TouchScreen* ts);
+	tab2(Adafruit_GFX* gfx, TouchScreen* ts, CColore* colore);
 	virtual ~tab2();
 	virtual void draw() override;
 	virtual int checkBottoni() override;
+	void printIntensita();
 };
 
 

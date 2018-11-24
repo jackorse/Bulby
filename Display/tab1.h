@@ -15,8 +15,9 @@ class tab1 : public GenericTab
 {
 private:
 	luceButton* luce;
+	bool *accesa;
  public:
-	tab1(Adafruit_GFX* gfx, TouchScreen* ts);
+	tab1(Adafruit_GFX* gfx, TouchScreen* ts, bool *accesa);
 	virtual ~tab1();
 	virtual void draw() override;
 	virtual int checkBottoni() override;

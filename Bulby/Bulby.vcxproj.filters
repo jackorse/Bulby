@@ -18,16 +18,13 @@
     <ClInclude Include="__vm\.Bulby.vsarduino.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CLuce.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MyIR.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="MyBluetooth.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="CColore.h">
+    <ClInclude Include="CLuce.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -42,9 +39,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyBluetooth.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="CColore.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
