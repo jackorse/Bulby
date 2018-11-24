@@ -169,6 +169,11 @@ void CLuce::checkBluetooth()
 			if (letto[i] >= '0'&&letto[i] <= '9')
 				isColore = false;
 		if (isColore)
+			if (letto == "on")
+				accendi();
+			else if (letto == "off")
+				spegni();
+			else
 			setColore(letto);
 		else
 			setIntensita(letto.toInt());
