@@ -14,9 +14,9 @@
 class tab2:public GenericTab
 {
 private:
-	button *piu;
-	button *meno;
-	int intensita;
+	//button *piu;
+	//button *meno;
+	//int intensita;
  public:
 	tab2(Adafruit_GFX* gfx, TouchScreen* ts);
 	virtual ~tab2();

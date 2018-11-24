@@ -28,7 +28,6 @@ int tab1::checkBottoni()
 {
 	if (luce->checkTouch()) 
 	{
-		Serial.println("luceeeee");
 		restartTimer();
 		return 10;
 	}
