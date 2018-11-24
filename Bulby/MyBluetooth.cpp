@@ -18,6 +18,8 @@ String MyBluetooth::leggi()
 	String ris;
 	if (available() > 0)
 		ris = readString();
+	if (ris != "")
+		Serial.println("letto: " + ris);
 	//if (colore.startsWith == "rosso" || colore == "giallo" || colore == "verde" || colore == "blu" || colore == "arancione" || colore == "azzurro" || colore == "bianco" || colore == "giallancione" || colore == "rosa" || colore == "rgbLento" || colore == "rgbVeloce")
 	return ris;
 	//else return "";

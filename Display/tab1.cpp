@@ -30,6 +30,7 @@ int tab1::checkBottoni()
 	{
 		Serial.println("luceeeee");
 		restartTimer();
+		return 10;
 	}
 	return GenericTab::checkBottoni();
 }
