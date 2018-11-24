@@ -28,6 +28,7 @@ void CLuce::accendi()
 {
 	ir.accendi();
 	accesa = true;
+	Serial.println("accesa");
 }
 
 void CLuce::spegni()
@@ -48,6 +49,7 @@ void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
 	setColore(colore);
+	this->intensita = 20;
 	setIntensita(intensita);
 }
 
