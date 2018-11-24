@@ -61,7 +61,8 @@ void CLuce::setColore(String colore)
 	Serial.println("colore: " + colore);
 	if (this->getAttivo()->getColore() == colore)
 		return;
-	else if (colore.startsWith("rosso")) {
+	this->getAttivo()->disattiva();
+	if (colore.startsWith("rosso")) {
 		this->colore[ROSSO].attiva();
 		ir.rosso();
 	}

@@ -47,5 +47,6 @@ void setup()
 void loop()
 {
 
-	luce->checkBluetooth();
+	//luce->checkBluetooth();
+	luce->checkDisplay();
 }

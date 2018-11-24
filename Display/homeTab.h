@@ -5,7 +5,8 @@ class homeTab : public abstractTab
 {
 private:
 	Adafruit_GFX* gfx;
-	button* b;
+	TouchScreen* ts;
+	//button* b;
 public:
 	homeTab(Adafruit_GFX* gfx, TouchScreen* ts);
 	virtual ~homeTab();
