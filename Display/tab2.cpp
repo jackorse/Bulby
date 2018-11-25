@@ -57,5 +57,5 @@ void tab2::printIntensita()
 {
 	gfx->fillRect(140, 80, 50, 50, WHITE);	//cancello 
 	gfx->setCursor(150, 100);
-	gfx->print(colore->getIntensita());
+	gfx->print(colore->getIntensita() * 5);
 }
