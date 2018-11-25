@@ -7,7 +7,7 @@ CColore::CColore()
 CColore::CColore(String colore, int intensita)
 {
 	this->colore = colore;
-	this->intensita = intensita;
+	setIntensita(intensita);
 }
 
 CColore::~CColore()
@@ -16,7 +16,8 @@ CColore::~CColore()
 
 void CColore::setIntensita(int intensita)
 {
-	this->intensita = intensita;
+	if (intensita >= 0 && intensita <= 20)
+		this->intensita = intensita;
 }
 
 int CColore::getIntensita()
