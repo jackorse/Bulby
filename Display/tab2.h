@@ -10,7 +10,8 @@
 #endif
 #include"GenericTab.h"
 #include"CColore.h"
-
+#define MENO_BUTTON 20
+#define PIU_BUTTON 30
 class tab2:public GenericTab
 {
 private:

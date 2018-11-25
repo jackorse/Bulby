@@ -42,10 +42,10 @@ void GenericTab::draw()
 int GenericTab::checkBottoni()
 {
 	unsigned long time2 = millis();
-	if (time2 - startTime > 6000)
-		return 0;
+	if (time2 - startTime > 8000)
+		return HOME_BUTTON;
 	if (home->checkTouch())
-		return 0;
+		return HOME_BUTTON;
 	for (int i = 0; i < 3; i++) {
 		if (tabs[i]->checkTouch())
 			return i + 1;

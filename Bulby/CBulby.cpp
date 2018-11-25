@@ -55,7 +55,7 @@ void CBulby::checkDisplay()
 	int ris = frame->getTab()->checkBottoni();
 	if (ris >= 0 && ris <= 3)
 		frame->setTab(ris);
-	else if (ris == 10)	//pulsante luce premuto
+	else if (ris == LUCE_BUTTON)	//pulsante luce premuto
 		if (luce.isAccesa()) {
 			luce.spegni();
 			bt.invia("spegni");
@@ -64,15 +64,15 @@ void CBulby::checkDisplay()
 			luce.accendi();
 			bt.invia("accendi");
 		}
-	else if (ris == 20)
+	else if (ris == MENO_BUTTON)
 	{
 		luce.setIntensita(luce.getIntensita() - 5);
 		bt.invia((String)luce.getIntensita());
 	}
-	else if (ris == 30)
+	else if (ris == PIU_BUTTON)
 	{
-		//setIntensita(getIntensita() + 5);
-		//bt.invia((String)getIntensita());
+		luce.setIntensita(luce.getIntensita() + 5);
+		bt.invia((String)luce.getIntensita());
 	}
 }
 

@@ -10,7 +10,7 @@
 #endif
 #include"GenericTab.h"
 #include"luceButton.h"
-
+#define LUCE_BUTTON 10
 class tab1 : public GenericTab
 {
 private:

@@ -32,7 +32,7 @@ int tab1::checkBottoni()
 	if (luce->checkTouch()) 
 	{
 		restartTimer();
-		return 10;
+		return LUCE_BUTTON;
 	}
 	return GenericTab::checkBottoni();
 }

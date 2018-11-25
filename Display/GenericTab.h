@@ -2,6 +2,10 @@
 #include"button.h"
 #include"tabButton.h"
 #include"abstractTab.h"
+#define HOME_BUTTON 0
+#define TAB1_BUTTON 1
+#define TAB2_BUTTON 2
+#define TAB3_BUTTON 3
 using namespace std;
 class GenericTab : public abstractTab
 {

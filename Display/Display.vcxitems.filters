@@ -9,85 +9,97 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx</Extensions>
     </Filter>
+    <Filter Include="Source Files\tabs">
+      <UniqueIdentifier>{8e40b455-2b0d-4109-befc-75a7c7cd2ec0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\buttons">
+      <UniqueIdentifier>{32168e79-d54d-4fa1-a78f-38aa78a86c99}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\tabs">
+      <UniqueIdentifier>{2a86fbe3-f864-40a8-b112-ae52af8615f3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\buttons">
+      <UniqueIdentifier>{668a438d-ebd5-403c-8113-6e7db3ab37d7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
     <Text Include="$(MSBuildThisFileDirectory)library.properties" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)abstractTab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)button.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)finestra.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)GenericTab.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)abstractTab.h">
+      <Filter>Header Files\tabs</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h">
-      <Filter>Header Files</Filter>
+    <ClInclude Include="$(MSBuildThisFileDirectory)GenericTab.h">
+      <Filter>Header Files\tabs</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)homeTab.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tabs</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)tab1.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tabs</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)tab2.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tabs</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)tab3.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\tabs</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)button.h">
+      <Filter>Header Files\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h">
+      <Filter>Header Files\buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h">
+      <Filter>Header Files\buttons</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)tabButton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\buttons</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)toggleButton.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\buttons</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)abstractTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)button.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)finestra.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)GenericTab.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)abstractTab.cpp">
+      <Filter>Source Files\tabs</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp">
-      <Filter>Source Files</Filter>
+    <ClCompile Include="$(MSBuildThisFileDirectory)GenericTab.cpp">
+      <Filter>Source Files\tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)homeTab.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)luceButton.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)tab1.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)tab2.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)tab3.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\tabs</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)button.cpp">
+      <Filter>Source Files\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp">
+      <Filter>Source Files\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)luceButton.cpp">
+      <Filter>Source Files\buttons</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)tabButton.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\buttons</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)toggleButton.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\buttons</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
