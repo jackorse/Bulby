@@ -13,6 +13,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Adafruit-GFX-Library-master
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Display", "Display\Display.vcxitems", "{3443F91A-59FC-491A-83C6-AA9F9F6CBC58}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Luce", "Luce\Luce.vcxitems", "{DDCCA000-9359-46F4-B43E-BC5DCC615B71}"
+EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		TFTLCD-Library-master\TFTLCD-Library-master.vcxitems*{18da6b61-07e7-4e33-9d59-b6301c509927}*SharedItemsImports = 9
@@ -21,7 +23,9 @@ Global
 		Adafruit-GFX-Library-master\Adafruit-GFX-Library-master.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Adafruit_TouchScreen-master\Adafruit_TouchScreen-master.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		Display\Display.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Luce\Luce.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
 		TFTLCD-Library-master\TFTLCD-Library-master.vcxitems*{c5f80730-f44f-4478-bdae-6634efc2ca88}*SharedItemsImports = 4
+		Luce\Luce.vcxitems*{ddcca000-9359-46f4-b43e-bc5dcc615b71}*SharedItemsImports = 9
 		Adafruit-GFX-Library-master\Adafruit-GFX-Library-master.vcxitems*{e3868617-2597-47f1-8436-de1ee57aa882}*SharedItemsImports = 9
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
