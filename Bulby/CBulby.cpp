@@ -66,12 +66,12 @@ void CBulby::checkDisplay()
 		}
 	else if (ris == MENO_BUTTON)
 	{
-		luce.setIntensita(luce.getIntensita() - 5);
+		luce.setIntensita(luce.getIntensita()/* - 5*/);
 		bt.invia((String)luce.getIntensita());
 	}
 	else if (ris == PIU_BUTTON)
 	{
-		luce.setIntensita(luce.getIntensita() + 5);
+		luce.setIntensita(luce.getIntensita()/* + 5*/);
 		bt.invia((String)luce.getIntensita());
 	}
 }

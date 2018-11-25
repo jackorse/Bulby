@@ -11,7 +11,7 @@ tab2::tab2(Adafruit_GFX * gfx, TouchScreen * ts, CColore* colore)
 {
 	this->colore = colore;
 	piu = new button(gfx, 200, 100, 50, 50, WHITE, BLACK, "+", ts);
-	meno = new button(gfx, 100, 100, 50, 50, WHITE, BLACK, "-", ts);
+	meno = NULL;// new button(gfx, 100, 100, 50, 50, WHITE, BLACK, "-", ts);
 	tabs[1]->setDisabled();
 }
 
@@ -31,7 +31,7 @@ void tab2::draw()
 	//gfx->println("\n  altre impostazioni.....");
 	//gfx->println("\n  Coming soon...");
 	piu->drawButton();
-	meno->drawButton();
+	//meno->drawButton();
 }
 
 int tab2::checkBottoni()
@@ -39,17 +39,17 @@ int tab2::checkBottoni()
 	if (piu->checkTouch())
 	{
 		restartTimer();
-		colore->setIntensita(colore->getIntensita() + 5);
+		colore->setIntensita(colore->getIntensita() + 1);
 		printIntensita();
 		return PIU_BUTTON;
 	}
-	else if (meno->checkTouch())
+	/*else if (meno->checkTouch())
 	{
 		restartTimer();
-		colore->setIntensita(colore->getIntensita() - 5);
+		colore->setIntensita(colore->getIntensita() - 1);
 		printIntensita();
 		return MENO_BUTTON;
-	}
+	}*/
 	return GenericTab::checkBottoni();
 }
 
