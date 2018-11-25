@@ -3,7 +3,7 @@
 class CColore
 {
 private:
-	 String colore;
+	String colore;
 	int intensita;
 	bool attivo;
 public:

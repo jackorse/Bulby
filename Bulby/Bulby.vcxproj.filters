@@ -21,12 +21,18 @@
     <ClInclude Include="CBulby.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MyBluetooth.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="Bulby.ino" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CBulby.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="MyBluetooth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

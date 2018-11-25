@@ -21,13 +21,11 @@
     <!-- <ClInclude Include="$(MSBuildThisFileDirectory)Luce.h" /> -->
     <ClInclude Include="$(MSBuildThisFileDirectory)CColore.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CLuce.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)MyBluetooth.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyIR.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CColore.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CLuce.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)MyBluetooth.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyIR.cpp" />
   </ItemGroup>
 </Project>

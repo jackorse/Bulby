@@ -3,29 +3,22 @@
 
 CLuce::CLuce()
 {
-	frame = new finestra(&accesa,getAttivo());
-	initBluetooth();
 	setLuce("bianco", 100);
 }
 
 CLuce::CLuce(String colore, int intensita)
 {
-	frame = new finestra(&accesa, getAttivo());
-	initBluetooth();
 	setLuce(colore, intensita);
 }
 
 CLuce::CLuce(String colore)
 {
-	frame = new finestra(&accesa, getAttivo());
-	initBluetooth();
 	setLuce(colore, 100);
 }
 
 
 CLuce::~CLuce()
 {
-	delete frame;
 }
 
 void CLuce::accendi()
@@ -40,13 +33,6 @@ void CLuce::spegni()
 	accesa = false;
 }
 
-void CLuce::initBluetooth()
-{
-	pinMode(9, OUTPUT);  // questo pin è connesso al relativo pin 34 (pin KEY) del HC-05 che portato a HIGH permette di passare alla modalità AT
-	digitalWrite(9, HIGH);
-	Serial.println("Inserire i comandi AT:");
-	bt.begin(38400);  // Velocità di default del modulo HC-05
-}
 
 void CLuce::setLuce(String colore, int intensita)
 {
@@ -62,7 +48,6 @@ void CLuce::setColore(String colore)
 	if (this->getAttivo()->getColore() == colore)
 		return;
 	this->getAttivo()->disattiva();
-	resetDisplay();
 	if (colore.startsWith("rosso")) {
 		this->colori[ROSSO].attiva();
 		ir.rosso();
@@ -138,7 +123,6 @@ void CLuce::setIntensita(int intensita)
 			}
 		}
 		this->getAttivo()->setIntensita(intensita);
-		resetDisplay();
 	}
 }
 
@@ -161,61 +145,7 @@ CColore* CLuce::getAttivo()
 	return nullptr;
 }
 
-void CLuce::checkBluetooth()
+bool CLuce::isAccesa()
 {
-	bool isColore = true;
-	String letto = bt.leggi();
-	if (letto != "")
-	{
-		for (int i = 0; i < letto.length(); i++)
-			if (letto[i] >= '0'&&letto[i] <= '9')
-				isColore = false;
-		if (isColore)
-			if (letto == "on")
-				accendi();
-			else if (letto == "off")
-				spegni();
-			else
-			setColore(letto);
-		else
-			setIntensita(letto.toInt());
-	}
-	//if (letto != "")
-	//{
-	//	setColore(letto);
-	//	setIntensita(intens);
-	//}
-
-}
-
-void CLuce::checkDisplay()
-{
-	int ris = frame->getTab()->checkBottoni();
-	if (ris >= 0 && ris <= 3)
-		frame->setTab(ris);
-	else if (ris == 10)	//pulsante luce premuto
-		if (accesa) {
-			spegni();
-			bt.invia("spegni");
-		}
-		else {
-			accendi();
-			bt.invia("accendi");
-		}
-	else if (ris == 20)
-	{
-		setIntensita(getIntensita() - 5);
-		bt.invia((String)getIntensita());
-	}
-	else if (ris == 30)
-	{
-		//setIntensita(getIntensita() + 5);
-		//bt.invia((String)getIntensita());
-	}
-}
-
-void CLuce::resetDisplay()
-{
-	delete frame;
-	frame = new finestra(&accesa, getAttivo());
+	return accesa;
 }

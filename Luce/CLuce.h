@@ -1,8 +1,6 @@
 #pragma once
 #include"MyIR.h"
 #include<WString.h>
-#include"MyBluetooth.h"
-#include"finestra.h"
 #include"CColore.h"
 #define NUMCOLORI 16
 
@@ -28,9 +26,7 @@
 class CLuce
 {
 private:
-	finestra* frame;
 	MyIR ir;
-	MyBluetooth bt;
 	CColore colori[NUMCOLORI];
 	bool accesa;
 public:
@@ -40,15 +36,12 @@ public:
 	~CLuce();
 	void accendi();
 	void spegni();
-	void initBluetooth();
 	void setLuce(String colore, int intensita);
 	void setColore(String colore);
 	void setIntensita(int intensita);
 	String getColore();
 	int getIntensita();
 	CColore* getAttivo();
-	void checkBluetooth();
-	void checkDisplay();
-	void resetDisplay();
+	bool isAccesa();
 };
 

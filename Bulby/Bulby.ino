@@ -5,12 +5,8 @@
 	Created:	07/11/2018 17:27:20
 	Author:     Giacomo Orsenigo
 */
-#include "tab3.h"
-#include "tab2.h"
-#include "tab1.h"
-#include "finestra.h"
 #include<spi.h>
-#include"CLuce.h"
+#include"CBulby.h"
 // Define User Types below here or use a .h file
 //
 
@@ -28,7 +24,7 @@
 // between X+ and X- Use any multimeter to read it
 // For the one we're using, its 300 ohms across the X plate
 //TouchScreen ts = TouchScreen(XP, YP, XM, YM, 300);
-CLuce *luce;
+CBulby *bulby;
 // The setup() function runs once each time the micro-controller starts
 void setup()
 {
@@ -39,7 +35,7 @@ void setup()
 	//frame->getAttiva()->draw();
 	//pinMode(13, OUTPUT);
 	//frame = new finestra();
-	luce = new CLuce("bianco");
+	bulby = new CBulby();
 	Serial.println("fine setup");
 	delay(10);
 }
@@ -48,5 +44,5 @@ void loop()
 {
 
 	//luce->checkBluetooth();
-	luce->checkDisplay();
+	bulby->checkDisplay();
 }
