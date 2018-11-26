@@ -162,7 +162,7 @@
 
 #else // Mega w/Breakout board
 
-#define write8inli   vne(d) {\                        
+#define write8inline(d) {\                        
 PORTH &= ~(0x78); \
 PORTH |= ((d & 0xC0) >> 3) | ((d & 0x3) << 5); \
 PORTE &= ~(0x38); \
@@ -173,6 +173,7 @@ WR_STROBE; }
 #define read8inline(result) { RD_ACTIVE; DELAY7; result = (PINH & 0x60) >> 5;result |= (PINH & 0x18) << 3;result |= (PINE & 0x8) << 2;result |= (PINE & 0x30) >> 2;result |= (PING & 0x20) >> 1;RD_IDLE;}
 #define setWriteDirInline() { DDRH |= 0x78;DDRE |= 0x38;DDRG |= 0x20; }
 #define setReadDirInline()  { DDRH &= ~0x78;DDRE &= ~0x38;DDRG &= ~(0x20); }
+
 #endif
 
 // All of the functions are inlined on the Arduino Mega.  When using the
