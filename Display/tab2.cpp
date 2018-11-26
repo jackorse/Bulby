@@ -6,7 +6,7 @@
 
 
 
-tab2::tab2(Adafruit_GFX * gfx, TouchScreen * ts, CColore* colore)
+tab2::tab2(Adafruit_GFX * gfx, TouchScreen * ts, CLuce* colore)
 	:GenericTab(gfx, ts)
 {
 	this->colore = colore;
@@ -39,14 +39,14 @@ int tab2::checkBottoni()
 	if (piu->checkTouch())
 	{
 		restartTimer();
-		colore->setIntensita(colore->getIntensita() + 1);
+		colore->setIntensita(colore->getIntensita() + 5);
 		printIntensita();
 		return PIU_BUTTON;
 	}
 	else if (meno->checkTouch())
 	{
 		restartTimer();
-		colore->setIntensita(colore->getIntensita() - 1);
+		colore->setIntensita(colore->getIntensita() - 5);
 		printIntensita();
 		return MENO_BUTTON;
 	}
@@ -55,7 +55,7 @@ int tab2::checkBottoni()
 
 void tab2::printIntensita()
 {
-	gfx->fillRect(165, 100, 35, 35, WHITE);	//cancello 
-	gfx->setCursor(170, 120);
-	gfx->print(colore->getIntensita() * 5);
+	gfx->fillRect(160, 100, 35, 35, WHITE);	//cancello 
+	gfx->setCursor(160, 120);
+	gfx->print(colore->getIntensita());
 }

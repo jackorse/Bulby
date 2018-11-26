@@ -53,9 +53,9 @@ private:
 	abstractTab* tab;
 	int index;
 	bool accesa;
-	CColore *colore;
+	CLuce *luce;
  public:
-	finestra(bool accesa, CColore *colore);
+	finestra(bool accesa, CLuce *luce);
 	~finestra();
 	void setTab(int index);
 	abstractTab* getTab();

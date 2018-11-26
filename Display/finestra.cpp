@@ -4,10 +4,10 @@
 
 #include "finestra.h"
 
-finestra::finestra(bool accesa, CColore * colore)
+finestra::finestra(bool accesa, CLuce * luce)
 	:Adafruit_TFTLCD(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET)
 {
-	this->colore = colore;
+	this->luce = luce;
 	this->accesa = accesa;
 	reset();
 	begin(0x9341);
@@ -45,7 +45,7 @@ void finestra::setTab(int index)
 			tab = new tab1(this, ts, &accesa);
 			break;
 		case 2:
-			tab = new tab2(this, ts, colore);
+			tab = new tab2(this, ts, luce);
 			break;
 		case 3:
 			tab = new tab3(this, ts);

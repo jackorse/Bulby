@@ -4,7 +4,7 @@
 
 CBulby::CBulby()
 {
-	frame = new finestra(luce.isAccesa(),luce.getAttivo());
+	frame = new finestra(luce.isAccesa(), &luce);
 	//luce = CLuce("bianco", 100);
 }
 
@@ -65,12 +65,12 @@ void CBulby::checkDisplay()
 		}
 	else if (ris == MENO_BUTTON)
 	{
-		luce.setIntensita(luce.getIntensita()/* - 5*/);
+		//luce.setIntensita(luce.getIntensita()/* - 5*/);
 		bt.invia((String)luce.getIntensita());
 	}
 	else if (ris == PIU_BUTTON)
 	{
-		luce.setIntensita(luce.getIntensita() /*+ 5*/);
+		//luce.setIntensita(luce.getIntensita() /*+ 5*/);
 		bt.invia((String)luce.getIntensita());
 	}
 }
@@ -78,5 +78,5 @@ void CBulby::checkDisplay()
 void CBulby::resetDisplay()
 {
 	delete frame;
-	frame = new finestra(luce.isAccesa(), luce.getAttivo());
+	frame = new finestra(luce.isAccesa(), &luce);
 }
