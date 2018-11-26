@@ -32,6 +32,7 @@ void tab2::draw()
 	//gfx->println("\n  Coming soon...");
 	piu->drawButton();
 	meno->drawButton();
+	printIntensita();
 }
 
 int tab2::checkBottoni()
