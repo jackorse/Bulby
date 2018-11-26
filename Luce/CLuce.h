@@ -4,22 +4,7 @@
 #include"CColore.h"
 #define NUMCOLORI 16
 
-//colors index
-#define GIALLO_ARANCIO 0
-#define VIOLA 1
-#define AZZURRO 2
-#define AZZURROCHIARO 3
-#define GIALLO 4
-#define AZZURRO_VERDE 5
-#define GIALLO_VERDE 6
-#define BLU_VIOLA 7
-#define ROSA 8
-#define AZZURRO 9
-#define BLU 10
-#define ROSSO 11
-#define BIANCO 12
-#define VERDE 13
-#define ARANCIONE 14
+
 /*
 * Classe che gestisce la luce
 */
@@ -29,6 +14,7 @@ private:
 	MyIR ir;
 	CColore colori[NUMCOLORI];
 	bool accesa;
+	const String colors[17] = { "giallancione","viola","azzurro","azzurrochiaro","giallo","azzurroverde","gialloverde","bluviola","rosa","azzurro","blu","rosso","bianco","verde","arancione","rgbLento","rgbVeloce" };
 public:
 	CLuce();
 	CLuce(String colore, int intensita);

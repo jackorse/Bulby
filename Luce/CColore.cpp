@@ -4,7 +4,7 @@ CColore::CColore()
 {
 }
 
-CColore::CColore(String colore, int intensita)
+CColore::CColore(int colore, int intensita)
 {
 	this->colore = colore;
 	setIntensita(intensita);
@@ -25,18 +25,20 @@ int CColore::getIntensita()
 	return intensita;
 }
 
-String CColore::getColore()
+int CColore::getColore()
 {
 	return colore;
 }
 
 void CColore::attiva()
 {
+	Serial.print("sto attivando: "); Serial.println(colore);
 	attivo = true;
 }
 
 void CColore::disattiva()
 {
+	Serial.print("sto disattivando: " ); Serial.println(colore);
 	attivo = false;
 }
 

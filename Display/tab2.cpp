@@ -27,7 +27,7 @@ void tab2::draw()
 	GenericTab::draw();
 	gfx->setCursor(50, 50);
 	gfx->setTextColor(BLACK);
-	gfx->println("INTENSITA'");
+	gfx->println("INTENSITA'"+ colore->getColore());
 	//gfx->println("\n  altre impostazioni.....");
 	//gfx->println("\n  Coming soon...");
 	piu->drawButton();

@@ -3,16 +3,22 @@
 
 CLuce::CLuce()
 {
+	for (int i = 0; i < 14; i++)
+		colori[i] = CColore(i);
 	setLuce("bianco", 100);
 }
 
 CLuce::CLuce(String colore, int intensita)
 {
+	for (int i = 0; i < 14; i++)
+		colori[i] = CColore(i);
 	setLuce(colore, intensita);
 }
 
 CLuce::CLuce(String colore)
 {
+	for (int i = 0; i < 14; i++)
+		colori[i] = CColore(i);
 	setLuce(colore, 100);
 }
 
@@ -45,8 +51,8 @@ void CLuce::setLuce(String colore, int intensita)
 void CLuce::setColore(String colore)
 {
 	Serial.println("colore: " + colore);
-	if (this->getAttivo()->getColore() == colore)
-		return;
+	//if (this->getAttivo()->getColore() == colore)
+	//	return;
 	this->getAttivo()->disattiva();
 	if (colore.startsWith("rosso")) {
 		this->colori[ROSSO].attiva();
@@ -130,7 +136,7 @@ void CLuce::setIntensita(int intensita)
 
 String CLuce::getColore()
 {
-	return getAttivo()->getColore();
+	return colors[getAttivo()->getColore()];
 }
 
 int CLuce::getIntensita()
@@ -142,7 +148,10 @@ CColore* CLuce::getAttivo()
 {
 	for (int i = 0; i < NUMCOLORI;i++) {
 		if (colori[i].isAttiva())
-			return colori;
+		{
+			Serial.println("attivo: "+colors[i]);
+			return &colori[i];
+		}
 	}
 	return nullptr;
 }
