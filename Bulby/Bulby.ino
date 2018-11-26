@@ -43,6 +43,6 @@ void setup()
 void loop()
 {
 
-	//luce->checkBluetooth();
+	bulby->checkBluetooth();
 	bulby->checkDisplay();
 }

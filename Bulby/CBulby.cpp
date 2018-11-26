@@ -16,10 +16,9 @@ CBulby::~CBulby()
 
 void CBulby::initBluetooth()
 {
-	pinMode(9, OUTPUT);  // questo pin è connesso al relativo pin 34 (pin KEY) del HC-05 che portato a HIGH permette di passare alla modalità AT
-	digitalWrite(9, HIGH);
-	Serial.println("Inserire i comandi AT:");
-	bt.begin(38400);  // Velocità di default del modulo HC-05
+	//pinMode(9, OUTPUT);  // questo pin è connesso al relativo pin 34 (pin KEY) del HC-05 che portato a HIGH permette di passare alla modalità AT
+	//digitalWrite(9, HIGH);
+	//Serial.println("Inserire i comandi AT:");
 }
 
 
