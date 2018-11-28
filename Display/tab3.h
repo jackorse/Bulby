@@ -10,14 +10,16 @@
 #endif
 
 #include"GenericTab.h"
-
+#include"colorButtonsSlider.h"
 class tab3 :public GenericTab
 {
+private:
+	colorButtonsSlider *slider;
 public:
-	tab3(Adafruit_GFX* gfx, TouchScreen* ts);
+	tab3(Adafruit_GFX* gfx, TouchScreen* ts, Colors* vettColori);
+	virtual ~tab3();
 	virtual void draw() override;
+	virtual int checkBottoni() override;
 };
-
-
 #endif
 
