@@ -8,3 +8,4 @@
 #define MAGENTA 0xF81F
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
+#define fromRGB(r,g,b) (r << 11) + (g << 5) + b	//trasforma da RGB a 16-bit
