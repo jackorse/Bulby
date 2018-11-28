@@ -20,6 +20,7 @@ public:
 	virtual ~tab3();
 	virtual void draw() override;
 	virtual int checkBottoni() override;
+	int getSliderIndex();
 };
 #endif
 

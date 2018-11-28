@@ -86,6 +86,11 @@ void CLuce::setColore(String colore)
 	Serial.println(colore);
 }
 
+void CLuce::setColore(int index)
+{
+	setColore(colori.get(index)->getColore());
+}
+
 void CLuce::setIntensita(int intensita)
 {
 	intensita /= 5;			//trasforma da % a 1-20

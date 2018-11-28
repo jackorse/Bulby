@@ -66,3 +66,8 @@ void colorButtonsSlider::draw()
 	for (int i = 0; i < 3; i++)
 		buttons[i]->drawButton();
 }
+
+int colorButtonsSlider::getIndex()
+{
+	return index;
+}

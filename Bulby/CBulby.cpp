@@ -54,7 +54,9 @@ void CBulby::checkDisplay()
 	int ris = frame->getTab()->checkBottoni();
 	if (ris >= 0 && ris <= 3)
 		frame->setTab(ris);
-	else if (ris == LUCE_BUTTON)	//pulsante luce premuto
+	else switch (ris)
+	{
+	case LUCE_BUTTON:	//pulsante luce premuto
 		if (luce.isAccesa()) {
 			luce.spegni();
 			bt.invia("spegni");
@@ -63,15 +65,33 @@ void CBulby::checkDisplay()
 			luce.accendi();
 			bt.invia("accendi");
 		}
-	else if (ris == MENO_BUTTON)
-	{
+		break;
+	case MENO_BUTTON:
 		//luce.setIntensita(luce.getIntensita()/* - 5*/);
 		bt.invia((String)luce.getIntensita());
-	}
-	else if (ris == PIU_BUTTON)
-	{
+		break;
+	case PIU_BUTTON:
 		//luce.setIntensita(luce.getIntensita() /*+ 5*/);
 		bt.invia((String)luce.getIntensita());
+		break;
+	case COLORE1_BUTTON:
+		tab3 *tab = (tab3*)frame->getTab();
+		int index = tab->getSliderIndex();
+		luce.setColore(index);
+		bt.invia(luce.getColore());
+		break;
+	case COLORE2_BUTTON:
+		tab3 *tab = (tab3*)frame->getTab();
+		int index = tab->getSliderIndex();
+		luce.setColore(index + 1);
+		bt.invia(luce.getColore());
+		break;
+	case COLORE3_BUTTON:
+		tab3 *tab = (tab3*)frame->getTab();
+		int index = tab->getSliderIndex();
+		luce.setColore(index + 2);
+		bt.invia(luce.getColore());
+		break;
 	}
 }
 

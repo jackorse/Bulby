@@ -23,6 +23,7 @@ public:
 	void spegni();
 	void setLuce(String colore, int intensita);
 	void setColore(String colore);
+	void setColore(int index);
 	void setIntensita(int intensita);
 	String getColore();
 	int getIntensita();

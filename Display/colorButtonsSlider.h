@@ -23,5 +23,6 @@ public:
 	uint16_t getColore(String colore);
 	void setIndex(int i);
 	void draw();
+	int getIndex();
 };
 
