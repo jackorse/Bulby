@@ -48,7 +48,7 @@ void finestra::setTab(int index)
 			tab = new tab2(this, ts, luce);
 			break;
 		case 3:
-			tab = new tab3(this, ts);
+			tab = new tab3(this, ts,luce->getColori());
 			break;
 		default:
 			Serial.println("come sei arrivato qui????");

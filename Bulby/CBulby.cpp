@@ -75,21 +75,21 @@ void CBulby::checkDisplay()
 		bt.invia((String)luce.getIntensita());
 		break;
 	case COLORE1_BUTTON:
-		tab3 *tab = (tab3*)frame->getTab();
-		int index = tab->getSliderIndex();
-		luce.setColore(index);
+		tab3 *tabA = (tab3*)frame->getTab();
+		int indexA = tabA->getSliderIndex();
+		luce.setColore(indexA);
 		bt.invia(luce.getColore());
 		break;
 	case COLORE2_BUTTON:
-		tab3 *tab = (tab3*)frame->getTab();
-		int index = tab->getSliderIndex();
-		luce.setColore(index + 1);
+		tab3 *tabB = (tab3*)frame->getTab();
+		int indexB = tabB->getSliderIndex();
+		luce.setColore(indexB + 1);
 		bt.invia(luce.getColore());
 		break;
 	case COLORE3_BUTTON:
-		tab3 *tab = (tab3*)frame->getTab();
-		int index = tab->getSliderIndex();
-		luce.setColore(index + 2);
+		tab3 *tabC = (tab3*)frame->getTab();
+		int indexC = tabC->getSliderIndex();
+		luce.setColore(indexC + 2);
 		bt.invia(luce.getColore());
 		break;
 	}
