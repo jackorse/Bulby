@@ -56,7 +56,7 @@ void CLuce::setColore(String colore)
 	this->getAttivo()->disattiva();
 	if (colore.startsWith("rosso")) {
 		this->colori[ROSSO].attiva();
-		ir.rosso();
+		ir.inviaColore(ROSSO);
 	}
 	else if (colore.startsWith("giallo")) {
 		this->colori[GIALLO].attiva();
