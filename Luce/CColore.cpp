@@ -4,9 +4,10 @@ CColore::CColore()
 {
 }
 
-CColore::CColore(int colore, int intensita)
+CColore::CColore(String colore, int index, int intensita)
 {
 	this->colore = colore;
+	this->index = index;
 	setIntensita(intensita);
 }
 
@@ -25,9 +26,14 @@ int CColore::getIntensita()
 	return intensita;
 }
 
-int CColore::getColore()
+String CColore::getColore()
 {
 	return colore;
+}
+
+int CColore::getIndex()
+{
+	return index;
 }
 
 void CColore::attiva()

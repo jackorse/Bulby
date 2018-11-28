@@ -3,22 +3,16 @@
 
 CLuce::CLuce()
 {
-	for (int i = 0; i < 14; i++)
-		colori[i] = CColore(i);
 	setLuce("bianco", 100);
 }
 
 CLuce::CLuce(String colore, int intensita)
 {
-	for (int i = 0; i < 14; i++)
-		colori[i] = CColore(i);
 	setLuce(colore, intensita);
 }
 
 CLuce::CLuce(String colore)
 {
-	for (int i = 0; i < 14; i++)
-		colori[i] = CColore(i);
 	setLuce(colore, 100);
 }
 
@@ -54,56 +48,39 @@ void CLuce::setColore(String colore)
 	//if (this->getAttivo()->getColore() == colore)
 	//	return;
 	this->getAttivo()->disattiva();
+	this->colori.get(colore)->attiva();
 	if (colore.startsWith("rosso")) {
-		this->colori[ROSSO].attiva();
-		ir.inviaColore(ROSSO);
+		ir.inviaColore(IR_ROSSO);
 	}
 	else if (colore.startsWith("giallo")) {
-		this->colori[GIALLO].attiva();
-		ir.giallo();
+		ir.inviaColore(IR_GIALLO);
 	}
 	else if (colore == "verde") {
-		ir.verde();
-		this->colori[VERDE].attiva();
+		ir.inviaColore(IR_VERDE);
 	}
 	else if (colore == "blu") {
-		ir.blu();
-		this->colori[BLU].attiva();
+		ir.inviaColore(IR_BLU);
 	}
 	else if (colore == "arancione") {
-
-		ir.arancione();
-		this->colori[ARANCIONE].attiva();
+		ir.inviaColore(IR_ARANCIONE);
 	}
 	else if (colore == "azzurro") {
-
-		ir.azzurro();
-		this->colori[AZZURRO].attiva();
+		ir.inviaColore(IR_AZZURRO);
 	}
 	else if (colore == "bianco") {
-
-		ir.bianco();
-		this->colori[BIANCO].attiva();
+		ir.inviaColore(IR_BIANCO);
 	}
 	else if (colore == "giallancione") {
-
-		ir.giallancione();
-		this->colori[GIALLO_ARANCIO].attiva();
+		ir.inviaColore(IR_GIALLO_ARANCIO);
 	}
 	else if (colore == "rosa") {
-
-		ir.rosa();
-		this->colori[ROSA].attiva();
+		ir.inviaColore(IR_ROSA);
 	}
 	else if (colore == "rgbLento") {
-
 		ir.RGBlento();
-		this->colori[multicolorLento].attiva();
 	}
 	else if (colore == "rgbVeloce") {
-
 		ir.RGBveloce();
-		this->colori[multicolorVeloce].attiva();
 	}
 	else return;
 	Serial.println(colore);
@@ -136,7 +113,7 @@ void CLuce::setIntensita(int intensita)
 
 String CLuce::getColore()
 {
-	return colors[getAttivo()->getColore()];
+	return getAttivo()->getColore();
 }
 
 int CLuce::getIntensita()
@@ -146,14 +123,7 @@ int CLuce::getIntensita()
 
 CColore* CLuce::getAttivo()
 {
-	for (int i = 0; i < NUMCOLORI;i++) {
-		if (colori[i].isAttiva())
-		{
-			Serial.println("attivo: "+colors[i]);
-			return &colori[i];
-		}
-	}
-	return nullptr;
+	return colori.getAttivo();
 }
 
 bool CLuce::isAccesa()

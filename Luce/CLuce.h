@@ -2,7 +2,7 @@
 #include"MyIR.h"
 #include<WString.h>
 #include"CColore.h"
-#define NUMCOLORI 16
+#include"Colors.h"
 
 
 /*
@@ -12,9 +12,8 @@ class CLuce
 {
 private:
 	MyIR ir;
-	CColore colori[NUMCOLORI];
+	Colors colori;
 	bool accesa;
-	const String colors[17] = { "giallancione","viola","azzurro","azzurrochiaro","giallo","azzurroverde","gialloverde","bluviola","rosa","azzurro","blu","rosso","bianco","verde","arancione","rgbLento","rgbVeloce" };
 public:
 	CLuce();
 	CLuce(String colore, int intensita);
