@@ -38,7 +38,7 @@ public:
 	~MyIR();
 	void accendi();
 	void spegni();
-	void inviaColore(int irCode);
+	void inviaColore(unsigned long irCode);
 	//void rosso();
 	//void verde();
 	//void blu();

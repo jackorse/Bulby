@@ -21,7 +21,7 @@ void MyIR::spegni()
 	sendNEC(IR_OFF, 32);
 }
 
-void MyIR::inviaColore(int irCode)
+void MyIR::inviaColore(unsigned long irCode)
 {
 	sendNEC(irCode, 32);
 }
