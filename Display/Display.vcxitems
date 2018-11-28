@@ -25,6 +25,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)homeTab.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)RGBColors.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)tab1.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)tab2.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)tab3.h" />
