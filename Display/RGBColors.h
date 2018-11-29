@@ -4,7 +4,7 @@
 #define	BLUE    0x001F
 #define	RED     0xF800
 #define	GREEN   0x07E0
-#define CYAN    0x07FF
+#define CYAN    0x4D3F
 #define MAGENTA 0xF81F
 #define YELLOW  0xFFE0
 #define WHITE   0xFFFF
@@ -12,4 +12,10 @@
 #define PINK 0xFC18
 #define ORANGE 0xFC00
 #define GIALLO_ARANCIO 0xFE4A
-#define AZZURRO 0x07FF
+#define VIOLA 0x8010
+#define AZZURRO_CHIARO 0x07FF
+#define AZZURRO_VERDE2  0x87F9
+#define AZZURRO_VERDE  0x2FF4
+#define GIALLO_VERDE 0xCFE0
+#define BLU_VIOLA 0x73BF
+#define ARANCIONE_SCURO 0xFB65

@@ -39,13 +39,28 @@ uint16_t colorButtonsSlider::getColore(String colore)
 	else if (colore == "arancione")
 		return ORANGE;
 	else if (colore == "azzurro")
-		return AZZURRO;
+		return CYAN;
 	else if (colore == "bianco")
 		return WHITE;
 	else if (colore == "giallancione")
 		return GIALLO_ARANCIO;
 	else if (colore == "rosa")
 		return PINK;
+	else if (colore == "viola")
+		return VIOLA;
+	else if (colore == "azzurrochiaro")
+		return AZZURRO_CHIARO;
+	else if (colore == "azzurroverde2")
+		return AZZURRO_VERDE2;
+	else if (colore == "azzurroverde")
+		return AZZURRO_VERDE;
+	else if (colore == "gialloverde")
+		return GIALLO_VERDE;
+	else if (colore == "bluviola")
+		return BLU_VIOLA;
+	else if (colore == "arancionescuro")
+		return ARANCIONE_SCURO;
+	
 }
 
 void colorButtonsSlider::setIndex(int i )
