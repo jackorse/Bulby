@@ -18,16 +18,38 @@
     <Text Include="$(MSBuildThisFileDirectory)library.properties" />
   </ItemGroup>
   <ItemGroup>
-    <!-- <ClInclude Include="$(MSBuildThisFileDirectory)Luce.h" /> -->
+    <ClInclude Include="$(MSBuildThisFileDirectory)boarddefs.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CColore.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)CLuce.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)Colors.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IRremote.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)IRremoteInt.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)ir_Lego_PF_BitStreamEncoder.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)MyIR.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)CColore.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)CLuce.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Colors.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)irPronto.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)irRecv.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IRremote.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)irSend.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Aiwa.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Denon.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Dish.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_JVC.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Lego_PF.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_LG.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Mitsubishi.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Panasonic.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_RC5_RC6.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Samsung.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sanyo.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sharp.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sony.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Template.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Whynter.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)MyIR.cpp" />
   </ItemGroup>
 </Project>
