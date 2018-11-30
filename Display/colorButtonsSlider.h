@@ -12,7 +12,7 @@ class colorButtonsSlider
 private:
 	button* buttons[3] = { nullptr,nullptr,nullptr };
 	button *sinistra, *destra;
-	int index;
+	unsigned short index;
 	Colors* vettColori;
 	Adafruit_GFX* gfx;
 	TouchScreen* ts;
