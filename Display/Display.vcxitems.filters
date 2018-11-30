@@ -54,9 +54,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h">
       <Filter>Header Files\buttons</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h">
-      <Filter>Header Files\buttons</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)tabButton.h">
       <Filter>Header Files\buttons</Filter>
     </ClInclude>
@@ -93,9 +90,6 @@
       <Filter>Source Files\tabs</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)button.cpp">
-      <Filter>Source Files\buttons</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp">
       <Filter>Source Files\buttons</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)luceButton.cpp">

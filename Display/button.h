@@ -14,7 +14,7 @@ class button :public Adafruit_GFX_Button
 protected:
 	TouchScreen* ts;
 private:
-	int x1, y1, w, h;
+	short x1, y1, w, h;
 public:
 	button(Adafruit_GFX *gfx, int x, int y, int w, int h, uint16_t colore, uint16_t coloreTesto, char *label, TouchScreen* ts);
 	~button();
