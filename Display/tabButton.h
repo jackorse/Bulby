@@ -3,7 +3,7 @@
 class tabButton : public button
 {
 private: 
-	int numTab;
+	unsigned short numTab;
 public:
 	tabButton();
 	tabButton(Adafruit_GFX* gfx, int x,int y,int numTab, TouchScreen* ts);
