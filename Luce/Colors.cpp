@@ -2,7 +2,7 @@
 
 Colors::Colors()
 {
-	String colorsname[] = { "giallancione", "viola", "azzurrochiaro", "azzurroverde2", "giallo", "azzurroverde", "gialloverde", "bluviola", "rosa", "azzurro", "blu", "rosso", "bianco", "verde", "arancione", "arancionescuro", "rgbLento", "rgbVeloce" };
+	char* colorsname[] = { "giallancione", "viola", "azzurrochiaro", "azzurroverde2", "giallo", "azzurroverde", "gialloverde", "bluviola", "rosa", "azzurro", "blu", "rosso", "bianco", "verde", "arancione", "arancionescuro", "rgbLento", "rgbVeloce" };
 	for (int i = 0; i < NUMCOLORI; i++)
 		colori[i] = CColore(colorsname[i], i);
 }

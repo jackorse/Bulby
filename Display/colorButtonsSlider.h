@@ -10,12 +10,13 @@
 class colorButtonsSlider
 {
 private:
-	button* buttons[3];
+	button* buttons[3] = { nullptr,nullptr,nullptr };
 	button *sinistra, *destra;
 	int index;
 	Colors* vettColori;
 	Adafruit_GFX* gfx;
 	TouchScreen* ts;
+	void elimina();
 public:
 	colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Colors *vettColori);
 	~colorButtonsSlider();

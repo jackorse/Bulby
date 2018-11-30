@@ -4,13 +4,13 @@
 class CColore
 {
 private:
-	String colore;
-	int index;
-	int intensita;
+	char colore[15];
+	unsigned short index;
+	unsigned short intensita;
 	bool attivo;
 public:
 	CColore();
-	CColore(String colore,int index, int intensita=100);
+	CColore(char colore[],int index, int intensita=100);
 	~CColore();
 	void setIntensita(int intensita);
 	int getIntensita();

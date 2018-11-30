@@ -4,11 +4,15 @@ CColore::CColore()
 {
 }
 
-CColore::CColore(String colore, int index, int intensita)
+CColore::CColore(char colore[], int index, int intensita)
 {
-	this->colore = colore;
+	Serial.println("initialing colore...");
+	strcpy(this->colore, colore);
+	Serial.println(colore);
+	Serial.println(this->colore);
 	this->index = index;
 	setIntensita(intensita);
+	Serial.println("colore inizializzato");
 }
 
 CColore::~CColore()
