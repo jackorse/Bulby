@@ -8,7 +8,7 @@ CBulby::CBulby()
 	//luce = CLuce("bianco", 100);
 }
 
-
+ 
 CBulby::~CBulby()
 {
 	delete frame;
@@ -46,8 +46,7 @@ void CBulby::checkBluetooth()
 	//	setColore(letto);
 	//	setIntensita(intens);
 	//}
-
-}
+	}
 
 void CBulby::checkDisplay()
 {
