@@ -33,14 +33,14 @@ int tab3::checkBottoni()
 			slider->setIndex(slider->getIndex() - 3);
 		else
 			slider->setIndex(0);
-		draw();
+		slider->draw();
 		return -1;
 	case  DESTRA_BUTTON:
 		if (slider->getIndex() + 3 < NUMCOLORI)
 			slider->setIndex(slider->getIndex() + 3);
 		else
 			slider->setIndex(NUMCOLORI - 1);
-		draw();
+		slider->draw();
 		return -1;
 	case -1:
 		return GenericTab::checkBottoni();
