@@ -97,3 +97,8 @@ int colorButtonsSlider::getIndex()
 {
 	return index;
 }
+
+Colors * colorButtonsSlider::getVettColor()
+{
+	return vettColori;
+}

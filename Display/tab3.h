@@ -15,6 +15,8 @@ class tab3 :public GenericTab
 {
 private:
 	colorButtonsSlider *slider;
+	button *attivo;
+	TouchScreen* ts;
 public:
 	tab3(Adafruit_GFX* gfx, TouchScreen* ts, Colors* vettColori);
 	virtual ~tab3();

@@ -17,13 +17,15 @@ private:
 	Adafruit_GFX* gfx;
 	TouchScreen* ts;
 	void elimina();
+
 public:
 	colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Colors *vettColori);
 	~colorButtonsSlider();
 	int checkTouch();
-	uint16_t getColore(String colore);
+	static uint16_t getColore(String colore);
 	void setIndex(int i);
 	void draw();
 	int getIndex();
+	Colors* getVettColor();
 };
 
