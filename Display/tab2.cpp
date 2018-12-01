@@ -1,7 +1,3 @@
-// 
-// 
-// 
-
 #include "tab2.h"
 
 
@@ -25,11 +21,9 @@ tab2::~tab2()
 void tab2::draw()
 {
 	GenericTab::draw();
-	gfx->setCursor(50, 50);
+	gfx->setCursor(120, 50);
 	gfx->setTextColor(BLACK);
-	gfx->println("INTENSITA'"+ colore->getColore());
-	//gfx->println("\n  altre impostazioni.....");
-	//gfx->println("\n  Coming soon...");
+	gfx->println("INTENSITA'");
 	piu->drawButton();
 	meno->drawButton();
 	printIntensita();

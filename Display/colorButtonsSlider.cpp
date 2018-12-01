@@ -13,9 +13,10 @@ colorButtonsSlider::colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Color
 {
 	this->gfx = gfx;
 	this->ts = ts;
+	this->vettColori = vettColori;
+	setIndex(0);
 	sinistra = new button(gfx, 5, 100, 50, 50, WHITE, BLACK, "<", ts);
 	destra = new button(gfx, 270, 100, 50, 50, WHITE, BLACK, ">", ts);
-	setIndex(0);
 }
 
 
@@ -70,9 +71,8 @@ uint16_t colorButtonsSlider::getColore(String colore)
 		return GIALLO_VERDE;
 	else if (colore == "bluviola")
 		return BLU_VIOLA;
-	else if (colore == "arancionescuro")
-		return ARANCIONE_SCURO;
-
+	else if (colore == "fucsia")
+		return FUCSIA;
 }
 
 void colorButtonsSlider::setIndex(int i)
@@ -81,7 +81,18 @@ void colorButtonsSlider::setIndex(int i)
 	elimina();
 	for (int i = 0; i < 3; i++)
 	{
-		buttons[i] = new button(gfx, (i + 1) * 70, 100, 50, 50, getColore((vettColori->get(index) + i)->getColore()), WHITE, "", ts);
+		if (index + i  == 16 )
+		{
+			buttons[i] = new button(gfx, (i + 1) * 70, 100, 50, 50, getColore((vettColori->get(index) + i)->getColore()), WHITE, "L", ts);
+		}
+		else if (index + i == 17)
+		{
+			buttons[i] = new button(gfx, (i + 1) * 70, 100, 50, 50, getColore((vettColori->get(index) + i)->getColore()), WHITE, "V", ts);
+		}
+		else
+		{
+			buttons[i] = new button(gfx, (i + 1) * 70, 100, 50, 50, getColore((vettColori->get(index) + i)->getColore()), WHITE, "", ts);
+		}
 	}
 }
 

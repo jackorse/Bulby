@@ -26,7 +26,7 @@
 #define IR_BIANCO 0xFFA857
 #define IR_VERDE 0xFFD827
 #define IR_ARANCIONE 0xFFE817
-#define IR_ARANCIONESCURO 0xFFF00F
+#define IR_FUCSIA 0xFFF00F
 
 /**
 * Classe che gestisce il LED IR

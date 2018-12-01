@@ -21,7 +21,7 @@ CColore::~CColore()
 
 void CColore::setIntensita(int intensita)
 {
-	if (intensita >= 0 && intensita <= 20)
+	if (intensita >= 1 && intensita <= 20)
 		this->intensita = intensita;
 }
 

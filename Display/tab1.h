@@ -15,7 +15,7 @@ class tab1 : public GenericTab
 {
 private:
 	luceButton* luce;
-	bool *accesa;
+	bool accesa;
  public:
 	tab1(Adafruit_GFX* gfx, TouchScreen* ts, bool *accesa);
 	virtual ~tab1();

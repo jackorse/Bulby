@@ -45,15 +45,16 @@ void CLuce::setLuce(String colore, int intensita)
 void CLuce::setColore(String colore)
 {
 	Serial.println("colore: " + colore);
-	//if (this->getAttivo()->getColore() == colore)
-	//	return;
 	this->getAttivo()->disattiva();
 	this->colori.get(colore)->attiva();
-	if (colore.startsWith("rosso")) {
+	if (colore == ("rosso")) {
 		ir.inviaColore(IR_ROSSO);
 	}
-	else if (colore.startsWith("giallo")) {
+	else if (colore == ("giallo")) {
 		ir.inviaColore(IR_GIALLO);
+	}
+	else if (colore == "gialloverde") {
+		ir.inviaColore(IR_GIALLO_VERDE);
 	}
 	else if (colore == "verde") {
 		ir.inviaColore(IR_VERDE);
@@ -61,20 +62,35 @@ void CLuce::setColore(String colore)
 	else if (colore == "blu") {
 		ir.inviaColore(IR_BLU);
 	}
+	else if (colore == "bluviola") {
+		ir.inviaColore(IR_BLU_VIOLA);
+	}
 	else if (colore == "arancione") {
 		ir.inviaColore(IR_ARANCIONE);
-	}
-	else if (colore == "azzurro") {
-		ir.inviaColore(IR_AZZURRO);
-	}
-	else if (colore == "bianco") {
-		ir.inviaColore(IR_BIANCO);
 	}
 	else if (colore == "giallancione") {
 		ir.inviaColore(IR_GIALLO_ARANCIO);
 	}
+	else if (colore == "azzurro") {
+		ir.inviaColore(IR_AZZURRO);
+	}
+	else if (colore == "azzurrochiaro") {
+		ir.inviaColore(IR_AZZURROCHIARO);
+	}
+	else if (colore == "bianco") {
+		ir.inviaColore(IR_BIANCO);
+	}
 	else if (colore == "rosa") {
 		ir.inviaColore(IR_ROSA);
+	}
+	else if (colore == "viola") {
+		ir.inviaColore(IR_VIOLA);
+	}
+	else if (colore == "azzurroverde") {
+		ir.inviaColore(IR_AZZURRO_VERDE);
+	}
+	else if (colore == "azzurroverde2") {
+		ir.inviaColore(IR_AZZURRO_VERDE2);
 	}
 	else if (colore == "rgbLento") {
 		ir.RGBlento();
@@ -89,13 +105,14 @@ void CLuce::setColore(String colore)
 void CLuce::setColore(int index)
 {
 	setColore(colori.get(index)->getColore());
+	Serial.println(colori.get(index)->getColore());
 }
 
 void CLuce::setIntensita(int intensita)
 {
 	intensita /= 5;			//trasforma da % a 1-20
 	Serial.println("Intensita: " + String(intensita));
-	if (intensita >= 0 && intensita <= 100)
+	if (intensita >= 5 && intensita <= 100)
 	{
 		int diff = this->getAttivo()->getIntensita() - intensita;
 		if (diff >= 0)

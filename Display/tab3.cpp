@@ -4,7 +4,7 @@ tab3::tab3(Adafruit_GFX * gfx, TouchScreen * ts, Colors* vettColori)
 	:GenericTab(gfx, ts)
 {
 	slider = new colorButtonsSlider(gfx, ts, vettColori);
-	attivo = new button(gfx, 150, 50, 50, 50, colorButtonsSlider::getColore(vettColori->getAttivo()->getColore()), WHITE, "", ts);
+	attivo = new button(gfx, 140,35, 50, 50, colorButtonsSlider::getColore(vettColori->getAttivo()->getColore()), WHITE, "", ts);
 	tabs[2]->setDisabled();
 	this->ts = ts;
 }
@@ -29,6 +29,7 @@ int tab3::checkBottoni()
 	switch (ris)
 	{
 	case SINISTRA_BUTTON:
+		restartTimer();
 		if (slider->getIndex() - 3 >= 0)
 			slider->setIndex(slider->getIndex() - 3);
 		else
@@ -36,17 +37,15 @@ int tab3::checkBottoni()
 		slider->draw();
 		return -1;
 	case  DESTRA_BUTTON:
+		restartTimer();
 		if (slider->getIndex() + 3 < NUMCOLORI)
 			slider->setIndex(slider->getIndex() + 3);
-		else
-			slider->setIndex(NUMCOLORI - 1);
 		slider->draw();
 		return -1;
 	case -1:
 		return GenericTab::checkBottoni();
 	default:
-		delete attivo;
-		attivo = new button(gfx, 150, 50, 50, 50, colorButtonsSlider::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "", ts);
+		restartTimer();
 		return ris;
 	}
 }
@@ -54,4 +53,22 @@ int tab3::checkBottoni()
 int tab3::getSliderIndex()
 {
 	return slider->getIndex();
+}
+
+void tab3::reDrawSelectedColorButton()
+{
+	delete attivo;
+	if (slider->getVettColor()->getAttivo()->getIndex() == 16)
+	{
+		attivo = new button(gfx, 140, 35, 50, 50, colorButtonsSlider::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "L", ts);
+	}
+	else if (slider->getVettColor()->getAttivo()->getIndex() == 17)
+	{
+		attivo = new button(gfx, 140, 35, 50, 50, colorButtonsSlider::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "V", ts);
+	}
+	else
+	{
+		attivo = new button(gfx, 140, 35, 50, 50, colorButtonsSlider::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "", ts);
+	}
+	attivo->drawButton();
 }

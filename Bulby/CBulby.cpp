@@ -14,14 +14,6 @@ CBulby::~CBulby()
 	delete frame;
 }
 
-void CBulby::initBluetooth()
-{
-	//pinMode(9, OUTPUT);  // questo pin è connesso al relativo pin 34 (pin KEY) del HC-05 che portato a HIGH permette di passare alla modalità AT
-	//digitalWrite(9, HIGH);
-	//Serial.println("Inserire i comandi AT:");
-}
-
-
 void CBulby::checkBluetooth()
 {
 	bool isColore = true;
@@ -32,26 +24,26 @@ void CBulby::checkBluetooth()
 			if (letto[i] >= '0'&&letto[i] <= '9')
 				isColore = false;
 		if (isColore)
-			if (letto == "on")
+			if (letto == "ON")
 				luce.accendi();
-			else if (letto == "off")
+			else if (letto == "OFF")
 				luce.spegni();
 			else
+			{
 				luce.setColore(letto);
+				//frame->getTab
+			}
 		else
 			luce.setIntensita(letto.toInt());
 	}
-	//if (letto != "")
-	//{
-	//	setColore(letto);
-	//	setIntensita(intens);
-	//}
-
 }
 
 void CBulby::checkDisplay()
 {
 	int ris = frame->getTab()->checkBottoni();
+	tab3 *tab;
+	int index;
+
 	if (ris >= 0 && ris <= 3)
 		frame->setTab(ris);
 	else switch (ris)
@@ -75,21 +67,25 @@ void CBulby::checkDisplay()
 		bt.invia((String)luce.getIntensita());
 		break;
 	case COLORE1_BUTTON:
-		tab3 *tabA = (tab3*)frame->getTab();
-		int indexA = tabA->getSliderIndex();
-		luce.setColore(indexA);
+		tab = (tab3*)frame->getTab();
+		index = tab->getSliderIndex();
+		luce.setColore(index);
+		tab->reDrawSelectedColorButton();
+		Serial.println(index);
 		bt.invia(luce.getColore());
 		break;
 	case COLORE2_BUTTON:
-		tab3 *tabB = (tab3*)frame->getTab();
-		int indexB = tabB->getSliderIndex();
-		luce.setColore(indexB + 1);
+		tab = (tab3*)frame->getTab();
+		index = tab->getSliderIndex();
+		luce.setColore(index + 1);
+		tab->reDrawSelectedColorButton();
 		bt.invia(luce.getColore());
 		break;
 	case COLORE3_BUTTON:
-		tab3 *tabC = (tab3*)frame->getTab();
-		int indexC = tabC->getSliderIndex();
-		luce.setColore(indexC + 2);
+		tab = (tab3*)frame->getTab();
+		index = tab->getSliderIndex();
+		luce.setColore(index + 2);
+		tab->reDrawSelectedColorButton();
 		bt.invia(luce.getColore());
 		break;
 	}
