@@ -153,6 +153,11 @@ bool CLuce::isAccesa()
 	return accesa;
 }
 
+bool * CLuce::getAccesa()
+{
+	return &accesa;
+}
+
 Colors * CLuce::getColori()
 {
 	return &colori;

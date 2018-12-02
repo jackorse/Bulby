@@ -29,6 +29,7 @@ public:
 	int getIntensita();
 	CColore* getAttivo();
 	bool isAccesa();
+	bool* getAccesa();
 	Colors* getColori();
 };
 

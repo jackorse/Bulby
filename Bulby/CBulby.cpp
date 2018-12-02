@@ -94,5 +94,5 @@ void CBulby::checkDisplay()
 void CBulby::resetDisplay()
 {
 	delete frame;
-	frame = new finestra(luce.isAccesa(), &luce);
+	frame = new finestra(luce.getAccesa(), &luce);
 }

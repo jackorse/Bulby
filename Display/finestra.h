@@ -52,10 +52,10 @@ private:
 	TouchScreen* ts;
 	abstractTab* tab;
 	int index;
-	bool accesa;
+	bool *accesa;
 	CLuce *luce;
  public:
-	finestra(bool accesa, CLuce *luce);
+	finestra(bool *accesa, CLuce *luce);
 	~finestra();
 	void setTab(int index);
 	abstractTab* getTab();
