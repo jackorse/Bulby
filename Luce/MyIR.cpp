@@ -13,17 +13,17 @@ MyIR::~MyIR()
 
 void MyIR::accendi()
 {
-	sendNEC(IR_ON, 32);
+	//sendNEC(IR_ON, 32);
 }
 
 void MyIR::spegni()
 {
-	sendNEC(IR_OFF, 32);
+	//sendNEC(IR_OFF, 32);
 }
 
 void MyIR::inviaColore(unsigned long irCode)
 {
-	sendNEC(irCode, 32);
+	//sendNEC(irCode, 32);
 }
 //
 //void MyIR::rosso()
@@ -73,20 +73,20 @@ void MyIR::inviaColore(unsigned long irCode)
 
 void MyIR::RGBveloce()
 {
-	sendNEC(IR_multicolorVeloce, 32);
+	//sendNEC(IR_multicolorVeloce, 32);
 }
 
 void MyIR::RGBlento()
 {
-	sendNEC(IR_multicolorLento, 32);
+	//sendNEC(IR_multicolorLento, 32);
 }
 
 void MyIR::aumentaIntensita()
 {
-	sendNEC(IR_AU_INT, 32);
+	//sendNEC(IR_AU_INT, 32);
 }
 
 void MyIR::diminuisciIntensita()
 {
-	sendNEC(IR_DIM_INT, 32);
+	//sendNEC(IR_DIM_INT, 32);
 }
