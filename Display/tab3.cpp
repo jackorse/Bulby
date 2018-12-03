@@ -4,7 +4,7 @@ tab3::tab3(Adafruit_GFX * gfx, TouchScreen * ts, Colors* vettColori)
 	:GenericTab(gfx, ts)
 {
 	slider = new colorButtonsSlider(gfx, ts, vettColori);
-	attivo = new button(gfx, 140,35, 50, 50, colorButtonsSlider::getColore(vettColori->getAttivo()->getColore()), WHITE, "", ts);
+	attivo = new button(gfx, 140, 35, 50, 50, colorButtonsSlider::getColore(vettColori->getAttivo()->getColore()), WHITE, "", ts);
 	tabs[2]->setDisabled();
 	this->ts = ts;
 }
@@ -31,15 +31,21 @@ int tab3::checkBottoni()
 	case SINISTRA_BUTTON:
 		restartTimer();
 		if (slider->getIndex() - 3 >= 0)
+		{
 			slider->setIndex(slider->getIndex() - 3);
+		}
 		else
+		{
 			slider->setIndex(0);
+		}
 		slider->draw();
 		return -1;
 	case  DESTRA_BUTTON:
 		restartTimer();
 		if (slider->getIndex() + 3 < NUMCOLORI)
+		{
 			slider->setIndex(slider->getIndex() + 3);
+		}
 		slider->draw();
 		return -1;
 	case -1:

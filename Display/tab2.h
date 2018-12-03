@@ -1,5 +1,3 @@
-// tab2.h
-
 #ifndef _TAB2_h
 #define _TAB2_h
 
@@ -12,12 +10,14 @@
 #include"CLuce.h"
 #define MENO_BUTTON 20
 #define PIU_BUTTON 30
+
 class tab2:public GenericTab
 {
 private:
 	button *piu;
 	button *meno;
 	CLuce *colore;
+
  public:
 	tab2(Adafruit_GFX* gfx, TouchScreen* ts, CLuce* luce);
 	virtual ~tab2();
@@ -26,6 +26,4 @@ private:
 	void printIntensita();
 };
 
-
 #endif
-

@@ -35,7 +35,9 @@ void GenericTab::draw()
 	Serial.println("drawing tabs...");
 	home->drawButton();
 	for (int i = 0; i < 3; i++)
+	{
 		tabs[i]->drawButton();
+	}
 	Serial.println("tabs disegnate");
 }
 
@@ -43,12 +45,19 @@ int GenericTab::checkBottoni()
 {
 	unsigned long time2 = millis();
 	if (time2 - startTime > 8000)
+	{
 		return HOME_BUTTON;
+	}
 	if (home->checkTouch())
+	{
 		return HOME_BUTTON;
-	for (int i = 0; i < 3; i++) {
+	}
+	for (int i = 0; i < 3; i++) 
+	{
 		if (tabs[i]->checkTouch())
+		{
 			return i + 1;
+		}
 	}
 	return -1;
 }
