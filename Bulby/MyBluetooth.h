@@ -1,6 +1,6 @@
 #pragma once
-#include<HardwareSerial.h>
 #include<SoftwareSerial.h>
+#include<HardwareSerial.h>
 /**
 * Classe che gestisce la comunicazione Bluetooth
 */

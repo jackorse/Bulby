@@ -45,4 +45,5 @@ void loop()
 
 	bulby->checkBluetooth();
 	//bulby->checkDisplay();
+	delay(500);
 }

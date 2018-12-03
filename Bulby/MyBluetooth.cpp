@@ -3,7 +3,7 @@
 
 
 MyBluetooth::MyBluetooth()
-	:SoftwarSerial(10,11)
+	:SoftwareSerial(10,11)
 {
 	Serial.println("starting bluetooth...");
 }
@@ -19,11 +19,9 @@ String MyBluetooth::leggi()
 	if (available() > 0)
 	{
 		ris = readString();// readString();
-	}
-	if (ris != "")
-	{
 		Serial.println("letto: " + ris);
 	}
+	
 	return ris;
 }
 
