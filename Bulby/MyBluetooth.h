@@ -1,9 +1,10 @@
 #pragma once
 #include<HardwareSerial.h>
+#include<SoftwareSerial.h>
 /**
 * Classe che gestisce la comunicazione Bluetooth
 */
-class MyBluetooth //:public SoftwareSerial
+class MyBluetooth :public SoftwareSerial
 {
 public:
 	MyBluetooth();

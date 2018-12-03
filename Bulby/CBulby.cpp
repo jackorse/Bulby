@@ -4,7 +4,7 @@
 
 CBulby::CBulby()
 {
-	frame = new finestra(luce.getAccesa(), &luce);
+	frame NULL;// = new finestra(luce.getAccesa(), &luce);
 }
 
 

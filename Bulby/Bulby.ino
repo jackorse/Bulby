@@ -44,5 +44,5 @@ void loop()
 {
 
 	bulby->checkBluetooth();
-	bulby->checkDisplay();
+	//bulby->checkDisplay();
 }
