@@ -116,14 +116,18 @@ void CLuce::setIntensita(int intensita)
 	{
 		int diff = this->getAttivo()->getIntensita() - intensita;
 		if (diff >= 0)
-			for (int i = 0; i < diff; i++) {
+		{
+			for (int i = 0; i < diff; i++)
+			{
 				Serial.println("diminuisco");
 				ir.diminuisciIntensita();
 				delay(50);
 			}
+		}
 		else
 		{
-			for (int i = diff; i < 0; i++) {
+			for (int i = diff; i < 0; i++) 
+			{
 				Serial.println("aumento");
 				ir.aumentaIntensita();
 				delay(50);

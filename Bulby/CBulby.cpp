@@ -4,8 +4,7 @@
 
 CBulby::CBulby()
 {
-	frame = new finestra(luce.isAccesa(), &luce);
-	//luce = CLuce("bianco", 100);
+	frame = new finestra(luce.getAccesa(), &luce);
 }
 
 
@@ -31,7 +30,6 @@ void CBulby::checkBluetooth()
 			else
 			{
 				luce.setColore(letto);
-				//frame->getTab
 			}
 		else
 			luce.setIntensita(letto.toInt());

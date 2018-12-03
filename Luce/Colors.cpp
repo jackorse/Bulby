@@ -23,9 +23,12 @@ CColore * Colors::get(String colorName)
 
 CColore * Colors::getAttivo()
 {
-	for (int i = 0; i < NUMCOLORI; i++) {
+	for (int i = 0; i < NUMCOLORI; i++)
+	{
 		if (colori[i].isAttiva())
+		{
 			return &colori[i];
+		}
 	}
 	return nullptr;
 }

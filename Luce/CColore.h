@@ -1,6 +1,7 @@
 #pragma once
 #include<WString.h>
 #include<HardwareSerial.h>
+
 class CColore
 {
 private:
@@ -8,6 +9,7 @@ private:
 	unsigned short index;
 	unsigned short intensita;
 	bool attivo;
+
 public:
 	CColore();
 	CColore(char colore[],int index, int intensita=100);
