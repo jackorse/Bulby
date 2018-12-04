@@ -101,6 +101,7 @@ void CLuce::setColore(String colore)
 	}
 	else return;
 	int diff = this->getAttivo()->getIntensita() - intensita;
+	Serial.println(diff);
 	if (diff >= 0)
 	{
 		for (int i = 0; i < diff; i++)
