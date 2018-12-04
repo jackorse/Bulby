@@ -29,5 +29,6 @@ String MyBluetooth::leggi()
 
 void MyBluetooth::invia(String colore)
 {
-	Serial1.write(colore.c_str());
+	Serial1.print(colore);
+	//Serial1.write(colore.c_str());
 }

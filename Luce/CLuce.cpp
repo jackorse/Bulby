@@ -47,6 +47,7 @@ void CLuce::setColore(String colore)
 	Serial.println("colore: " + colore);
 	this->getAttivo()->disattiva();
 	this->colori.get(colore)->attiva();
+	int index = Colors::getColore(colore);
 	if (colore == ("rosso")) {
 		ir.inviaColore(IR_ROSSO);
 	}
@@ -99,6 +100,27 @@ void CLuce::setColore(String colore)
 		ir.RGBveloce();
 	}
 	else return;
+	int diff = this->getAttivo()->getIntensita() - intensita;
+	Serial.println(diff);
+	if (diff >= 0)
+	{
+		for (int i = 0; i < diff; i++)
+		{
+			Serial.println("diminuisco");
+			ir.diminuisciIntensita();
+			delay(50);
+		}
+	}
+	else
+	{
+		for (int i = diff; i < 0; i++)
+		{
+			Serial.println("aumento");
+			ir.aumentaIntensita();
+			delay(50);
+		}
+	}
+	this->getAttivo()->setIntensita(intensita);
 	Serial.println(colore);
 }
 
@@ -110,31 +132,33 @@ void CLuce::setColore(int index)
 
 void CLuce::setIntensita(int intensita)
 {
-	intensita /= 5;			//trasforma da % a 1-20
-	Serial.println("Intensita: " + String(intensita));
-	if (intensita >= 5 && intensita <= 100)
-	{
-		int diff = this->getAttivo()->getIntensita() - intensita;
-		if (diff >= 0)
-		{
-			for (int i = 0; i < diff; i++)
-			{
-				Serial.println("diminuisco");
-				ir.diminuisciIntensita();
-				delay(50);
-			}
-		}
-		else
-		{
-			for (int i = diff; i < 0; i++) 
-			{
-				Serial.println("aumento");
-				ir.aumentaIntensita();
-				delay(50);
-			}
-		}
-		this->getAttivo()->setIntensita(intensita);
-	}
+	this->intensita = intensita / 5;
+	Serial.println("Intensita: " + String(this->intensita));
+
+	//intensita /= 5;			//trasforma da % a 1-20
+	//if (intensita >= 5 && intensita <= 100)
+	//{
+	//	int diff = this->getAttivo()->getIntensita() - intensita;
+	//	if (diff >= 0)
+	//	{
+	//		for (int i = 0; i < diff; i++)
+	//		{
+	//			Serial.println("diminuisco");
+	//			ir.diminuisciIntensita();
+	//			delay(50);
+	//		}
+	//	}
+	//	else
+	//	{
+	//		for (int i = diff; i < 0; i++) 
+	//		{
+	//			Serial.println("aumento");
+	//			ir.aumentaIntensita();
+	//			delay(50);
+	//		}
+	//	}
+	//	this->getAttivo()->setIntensita(intensita);
+	//}
 }
 
 String CLuce::getColore()
