@@ -100,27 +100,10 @@ void CLuce::setColore(String colore)
 		ir.RGBveloce();
 	}
 	else return;
-	int diff = this->getAttivo()->getIntensita() - intensita;
-	Serial.println(diff);
-	if (diff >= 0)
-	{
-		for (int i = 0; i < diff; i++)
-		{
-			Serial.println("diminuisco");
-			ir.diminuisciIntensita();
-			delay(50);
-		}
-	}
-	else
-	{
-		for (int i = diff; i < 0; i++)
-		{
-			Serial.println("aumento");
-			ir.aumentaIntensita();
-			delay(50);
-		}
-	}
-	this->getAttivo()->setIntensita(intensita);
+
+	//dopo aver cambiato il colore sistemo l'intensità
+	changeIntensita();
+
 	Serial.println(colore);
 }
 
@@ -132,33 +115,10 @@ void CLuce::setColore(int index)
 
 void CLuce::setIntensita(int intensita)
 {
-	this->intensita = intensita / 5;
+	if (intensita >= 1 && intensita <= 100)
+		this->intensita = intensita / 5;
 	Serial.println("Intensita: " + String(this->intensita));
-
-	//intensita /= 5;			//trasforma da % a 1-20
-	//if (intensita >= 5 && intensita <= 100)
-	//{
-	//	int diff = this->getAttivo()->getIntensita() - intensita;
-	//	if (diff >= 0)
-	//	{
-	//		for (int i = 0; i < diff; i++)
-	//		{
-	//			Serial.println("diminuisco");
-	//			ir.diminuisciIntensita();
-	//			delay(50);
-	//		}
-	//	}
-	//	else
-	//	{
-	//		for (int i = diff; i < 0; i++) 
-	//		{
-	//			Serial.println("aumento");
-	//			ir.aumentaIntensita();
-	//			delay(50);
-	//		}
-	//	}
-	//	this->getAttivo()->setIntensita(intensita);
-	//}
+	changeIntensita();
 }
 
 String CLuce::getColore()
@@ -168,7 +128,8 @@ String CLuce::getColore()
 
 int CLuce::getIntensita()
 {
-	return getAttivo()->getIntensita() * 5; //trasforma in %
+	//return getAttivo()->getIntensita() * 5; //trasforma in %
+	return intensita * 5;
 }
 
 CColore* CLuce::getAttivo()
@@ -189,4 +150,29 @@ bool * CLuce::getAccesa()
 Colors * CLuce::getColori()
 {
 	return &colori;
+}
+
+void CLuce::changeIntensita()
+{
+	int diff = this->getAttivo()->getIntensita() - intensita;
+	if (diff >= 0)
+	{
+		for (int i = 0; i < diff; i++)
+		{
+			Serial.println("diminuisco");
+			ir.diminuisciIntensita();
+			delay(50);
+		}
+	}
+	else
+	{
+		for (int i = diff; i < 0; i++)
+		{
+			Serial.println("aumento");
+			ir.aumentaIntensita();
+			delay(50);
+		}
+	}
+	this->getAttivo()->setIntensita(intensita);
+
 }

@@ -12,7 +12,7 @@ private:
 
 public:
 	CColore();
-	CColore(char colore[],int index, int intensita=100);
+	CColore(char colore[], int index, int intensita = 20);
 	~CColore();
 	void setIntensita(int intensita);
 	int getIntensita();

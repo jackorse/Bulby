@@ -32,5 +32,6 @@ public:
 	bool isAccesa();
 	bool* getAccesa();
 	Colors* getColori();
+	void changeIntensita();
 };
 
