@@ -4,14 +4,16 @@ CColore::CColore()
 {
 }
 
-CColore::CColore(char colore[], int index, int intensita)
+CColore::CColore(char colore[], int index, int intensita = 20)
 {
 	Serial.println("initialing colore...");
 	strcpy(this->colore, colore);
 	Serial.println(colore);
 	Serial.println(this->colore);
 	this->index = index;
+	Serial.println(intensita);
 	setIntensita(intensita);
+	Serial.println(this->intensita);
 	Serial.println("colore inizializzato");
 }
 
@@ -48,7 +50,7 @@ void CColore::attiva()
 
 void CColore::disattiva()
 {
-	Serial.print("sto disattivando: " ); Serial.println(colore);
+	Serial.print("sto disattivando: "); Serial.println(colore);
 	attivo = false;
 }
 

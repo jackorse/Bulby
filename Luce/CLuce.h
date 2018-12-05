@@ -14,6 +14,7 @@ private:
 	MyIR ir;
 	Colors colori;
 	bool accesa;
+	unsigned short intensita;
 public:
 	CLuce();
 	CLuce(String colore, int intensita);
@@ -31,5 +32,6 @@ public:
 	bool isAccesa();
 	bool* getAccesa();
 	Colors* getColori();
+	void changeIntensita();
 };
 

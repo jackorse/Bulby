@@ -49,11 +49,11 @@ void CBulby::checkDisplay()
 	case LUCE_BUTTON:	//pulsante luce premuto
 		if (luce.isAccesa()) {
 			luce.spegni();
-			bt.invia("spegni");
+			bt.invia("off");
 		}
-		else {
+		else { 
 			luce.accendi();
-			bt.invia("accendi");
+			bt.invia("on");
 		}
 		break;
 	case MENO_BUTTON:
@@ -65,6 +65,7 @@ void CBulby::checkDisplay()
 		bt.invia((String)luce.getIntensita());
 		break;
 	case COLORE1_BUTTON:
+		Serial.println("1");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index);
@@ -73,6 +74,7 @@ void CBulby::checkDisplay()
 		bt.invia(luce.getColore());
 		break;
 	case COLORE2_BUTTON:
+		Serial.println("2");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index + 1);
@@ -80,6 +82,7 @@ void CBulby::checkDisplay()
 		bt.invia(luce.getColore());
 		break;
 	case COLORE3_BUTTON:
+		Serial.println("3");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index + 2);

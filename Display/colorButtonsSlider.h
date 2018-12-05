@@ -22,7 +22,6 @@ public:
 	colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Colors *vettColori);
 	~colorButtonsSlider();
 	int checkTouch();
-	static uint16_t getColore(String colore);
 	void setIndex(int i);
 	void draw();
 	int getIndex();

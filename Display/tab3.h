@@ -16,9 +16,10 @@ private:
 	colorButtonsSlider *slider;
 	button *attivo;
 	TouchScreen* ts;
+	bool *acceso;
 
 public:
-	tab3(Adafruit_GFX* gfx, TouchScreen* ts, Colors* vettColori);
+	tab3(Adafruit_GFX* gfx, TouchScreen* ts, Colors* vettColori, bool* acceso);
 	virtual ~tab3();
 	virtual void draw() override;
 	virtual int checkBottoni() override;
