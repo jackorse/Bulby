@@ -44,9 +44,11 @@ void CLuce::setLuce(String colore, int intensita)
 
 void CLuce::setColore(String colore)
 {
+	Serial.println("SET COLORE");
 	Serial.println("colore selezionato: " + colore);
-	colori.disattivaTutti();
-	//this->getAttivo()->disattiva();
+	//colori.printColoriAttivi();
+	//colori.disattivaTutti();
+	this->getAttivo()->disattiva();
 	this->colori.get(colore)->attiva();
 	Serial.println("colore attivato:" + colori.getAttivo()->getColore() + (String)colori.getAttivo()->getIndex());
 	int index = Colors::getColore(colore);

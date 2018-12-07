@@ -21,4 +21,5 @@ public:
 	void attiva();
 	void disattiva();
 	bool isAttiva();
+	String toString();
 };

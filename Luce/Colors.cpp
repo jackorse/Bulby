@@ -73,3 +73,10 @@ void Colors::disattivaTutti()
 	for (int i = 0; i < NUMCOLORI; i++)
 		colori[i].disattiva();
 }
+
+void Colors::printColoriAttivi()
+{
+	for (int i = 0; i < NUMCOLORI; i++)
+		if (colori[i].isAttiva())
+			Serial.println(colori[i].toString());
+}

@@ -14,6 +14,7 @@ CColore::CColore(char colore[], int index, int intensita = 20)
 	Serial.println(intensita);
 	setIntensita(intensita);
 	Serial.println(this->intensita);
+	attivo = false;
 	Serial.println("colore inizializzato");
 }
 
@@ -57,4 +58,12 @@ void CColore::disattiva()
 bool CColore::isAttiva()
 {
 	return attivo;
+}
+
+String CColore::toString()
+{
+	String ris = " Attivo";
+	if (!attivo)
+		ris = " Non attivo";
+	return "Colore: " + String(colore) + " index: " + (String)index + ris;
 }
