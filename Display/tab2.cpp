@@ -6,8 +6,8 @@ tab2::tab2(Adafruit_GFX * gfx, TouchScreen * ts, CLuce* colore)
 	:GenericTab(gfx, ts)
 {
 	this->colore = colore;
-	piu = new button(gfx, 200, 100, 50, 50, WHITE, BLACK, "+", ts);
-	meno = new button(gfx, 100, 100, 50, 50, WHITE, BLACK, "-", ts);
+	piu = new button(gfx, 185, 100, 50, 50, WHITE, BLACK, "+", ts);
+	meno = new button(gfx, 85, 100, 50, 50, WHITE, BLACK, "-", ts);
 	tabs[1]->setDisabled();
 }
 
@@ -21,7 +21,7 @@ tab2::~tab2()
 void tab2::draw()
 {
 	GenericTab::draw();
-	gfx->setCursor(120, 50);
+	gfx->setCursor(100, 50);
 	gfx->setTextColor(BLACK);
 	gfx->println("INTENSITA'");
 	piu->drawButton();
@@ -50,7 +50,7 @@ int tab2::checkBottoni()
 
 void tab2::printIntensita()
 {
-	gfx->fillRect(160, 100, 35, 35, WHITE);	//cancello 
-	gfx->setCursor(160, 120);
+	gfx->fillRect(145, 100, 35, 35, WHITE);	//cancello 
+	gfx->setCursor(145, 120);
 	gfx->print(colore->getIntensita());
 }
