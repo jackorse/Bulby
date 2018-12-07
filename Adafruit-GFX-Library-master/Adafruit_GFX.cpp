@@ -1695,6 +1695,31 @@ boolean Adafruit_GFX_Button::justPressed() { return (currstate && !laststate); }
 /**************************************************************************/
 boolean Adafruit_GFX_Button::justReleased() { return (!currstate && laststate); }
 
+void Adafruit_GFX_Button::drawButtonConSpigoli(boolean inverted)
+{
+	uint16_t fill, outline, text;
+
+	if (!inverted) {
+		fill = _fillcolor;
+		outline = _outlinecolor;
+		text = _textcolor;
+	}
+	else {
+		fill = _textcolor;
+		outline = _outlinecolor;
+		text = _fillcolor;
+	}
+
+	_gfx->fillRect(_x1, _y1, _w, _h, fill);
+	_gfx->drawRect(_x1, _y1, _w, _h, outline);
+
+	_gfx->setCursor(_x1 + (_w / 2) - (strlen(_label) * 3 * _textsize),
+		_y1 + (_h / 2) - (4 * _textsize));
+	_gfx->setTextColor(text);
+	_gfx->setTextSize(_textsize);
+	_gfx->print(_label);
+}
+
 // -------------------------------------------------------------------------
 
 // GFXcanvas1, GFXcanvas8 and GFXcanvas16 (currently a WIP, don't get too
