@@ -37,6 +37,7 @@ void CLuce::spegni()
 void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
+	colori.get(colore)->attiva();
 	setIntensita(intensita);
 	setColore(colore);
 	//this->getAttivo()->setIntensita(20);
