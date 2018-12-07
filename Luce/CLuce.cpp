@@ -44,9 +44,11 @@ void CLuce::setLuce(String colore, int intensita)
 
 void CLuce::setColore(String colore)
 {
-	Serial.println("colore: " + colore);
-	this->getAttivo()->disattiva();
+	Serial.println("colore selezionato: " + colore);
+	colori.disattivaTutti();
+	//this->getAttivo()->disattiva();
 	this->colori.get(colore)->attiva();
+	Serial.println("colore attivato:" + colori.getAttivo()->getColore() + (String)colori.getAttivo()->getIndex());
 	int index = Colors::getColore(colore);
 	if (colore == ("rosso")) {
 		ir.inviaColore(IR_ROSSO);
@@ -103,14 +105,11 @@ void CLuce::setColore(String colore)
 
 	//dopo aver cambiato il colore sistemo l'intensità
 	changeIntensita();
-
-	Serial.println(colore);
 }
 
 void CLuce::setColore(int index)
 {
 	setColore(colori.get(index)->getColore());
-	Serial.println(colori.get(index)->getColore());
 }
 
 void CLuce::setIntensita(int intensita)
@@ -155,14 +154,12 @@ Colors * CLuce::getColori()
 void CLuce::changeIntensita()
 {
 	int diff = this->getAttivo()->getIntensita() - intensita;
-	Serial.println(diff);
-	Serial.println(this->getAttivo()->getIntensita());
 	Serial.println(intensita);
 	if (diff >= 0)
 	{
 		for (int i = 0; i < diff; i++)
 		{
-			Serial.println("diminuisco");
+			Serial.println("diminuisco intensità");
 			ir.diminuisciIntensita();
 			delay(50);
 		}
@@ -171,7 +168,7 @@ void CLuce::changeIntensita()
 	{
 		for (int i = diff; i < 0; i++)
 		{
-			Serial.println("aumento");
+			Serial.println("aumento intensità");
 			ir.aumentaIntensita();
 			delay(50);
 		}

@@ -65,26 +65,28 @@ void CBulby::checkDisplay()
 		bt.invia((String)luce.getIntensita());
 		break;
 	case COLORE1_BUTTON:
-		Serial.println("1");
+		Serial.println("Colore premuto: 1");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index);
+		Serial.println("Index premuto:"+(String)index);
 		tab->reDrawSelectedColorButton();
-		Serial.println(index);
 		bt.invia(luce.getColore());
 		break;
 	case COLORE2_BUTTON:
-		Serial.println("2");
+		Serial.println("Colore premuto: 2");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index + 1);
+		Serial.println("Index premuto:" + (String)(index + 1));
 		tab->reDrawSelectedColorButton();
 		bt.invia(luce.getColore());
 		break;
 	case COLORE3_BUTTON:
-		Serial.println("3");
+		Serial.println("Colore premuto: 3");
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
+		Serial.println("Index premuto:" + (String)(index + 2));
 		luce.setColore(index + 2);
 		tab->reDrawSelectedColorButton();
 		bt.invia(luce.getColore());

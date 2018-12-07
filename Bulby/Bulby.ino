@@ -31,7 +31,7 @@ void setup()
 	Serial.begin(9600);
 	Serial.println("START");
 	delay(10);
-	Serial.println("sto per disegnareeee");
+	Serial.println("sto per disegnare");
 	//frame->getAttiva()->draw();
 	//pinMode(13, OUTPUT);
 	//frame = new finestra();

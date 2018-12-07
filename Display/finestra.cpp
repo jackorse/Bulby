@@ -34,8 +34,6 @@ void finestra::setTab(int index)
 	{
 		delete tab;
 		Serial.println("tab deletato");
-		Serial.println(index);
-		Serial.println(this->index);
 		switch (index)
 		{
 		case 0:
@@ -51,7 +49,6 @@ void finestra::setTab(int index)
 			tab = new tab3(this, ts,luce->getColori(), accesa);
 			break;
 		default:
-			Serial.println("come sei arrivato qui????");
 			break;
 		}
 	}

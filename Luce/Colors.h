@@ -11,6 +11,7 @@ public:
 	CColore* get(String colorName);
 	CColore* getAttivo();
 	static uint16_t getColore(String colore);
+	void disattivaTutti();
 };
 
 

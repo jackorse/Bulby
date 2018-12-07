@@ -67,3 +67,9 @@ uint16_t Colors::getColore(String colore)
 	else if (colore == "fucsia")
 		return FUCSIA;
 }
+
+void Colors::disattivaTutti()
+{
+	for (int i = 0; i < NUMCOLORI; i++)
+		colori[i].disattiva();
+}
