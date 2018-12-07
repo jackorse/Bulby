@@ -39,7 +39,7 @@ void CLuce::setLuce(String colore, int intensita)
 	accendi();
 	setIntensita(intensita);
 	setColore(colore);
-	this->getAttivo()->setIntensita(20);
+	//this->getAttivo()->setIntensita(20);
 }
 
 void CLuce::setColore(String colore)
@@ -156,7 +156,8 @@ Colors * CLuce::getColori()
 void CLuce::changeIntensita()
 {
 	int diff = this->getAttivo()->getIntensita() - intensita;
-	Serial.println(intensita);
+	Serial.println(this->getAttivo()->toString());
+	Serial.println("Intensità colore attivo: " + (String)getAttivo()->getIntensita());
 	if (diff >= 0)
 	{
 		for (int i = 0; i < diff; i++)
@@ -176,5 +177,4 @@ void CLuce::changeIntensita()
 		}
 	}
 	this->getAttivo()->setIntensita(intensita);
-
 }

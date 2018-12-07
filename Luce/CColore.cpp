@@ -20,6 +20,7 @@ void CColore::setIntensita(int intensita)
 {
 	if (intensita >= 1 && intensita <= 20)
 		this->intensita = intensita;
+	Serial.println("Nuova intensita: " + (String)this->intensita);
 }
 
 int CColore::getIntensita()
