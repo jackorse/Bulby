@@ -6,16 +6,10 @@ CColore::CColore()
 
 CColore::CColore(char colore[], int index, int intensita = 20)
 {
-	Serial.println("initialing colore...");
 	strcpy(this->colore, colore);
-	Serial.println(colore);
-	Serial.println(this->colore);
 	this->index = index;
-	Serial.println(intensita);
 	setIntensita(intensita);
-	Serial.println(this->intensita);
 	attivo = false;
-	Serial.println("colore inizializzato");
 }
 
 CColore::~CColore()

@@ -50,7 +50,7 @@ void CLuce::setColore(String colore)
 	//colori.disattivaTutti();
 	this->getAttivo()->disattiva();
 	this->colori.get(colore)->attiva();
-	Serial.println("colore attivato:" + colori.getAttivo()->getColore() + (String)colori.getAttivo()->getIndex());
+	Serial.println("colore attivato:" + colori.getAttivo()->toString());
 	int index = Colors::getColore(colore);
 	if (colore == ("rosso")) {
 		ir.inviaColore(IR_ROSSO);
