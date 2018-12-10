@@ -173,7 +173,7 @@ class Adafruit_GFX_Button {
   boolean justReleased();
 
 
-  void drawButtonConSpigoli(boolean inverted = false);
+  void drawButtonSquadrato(boolean inverted = false);
 
 
  private:

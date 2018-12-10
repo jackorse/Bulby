@@ -15,7 +15,6 @@ class tab3 :public GenericTab
 private:
 	colorButtonsSlider *slider;
 	button *attivo;
-	TouchScreen* ts;
 	bool *acceso;
 
 public:

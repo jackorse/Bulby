@@ -36,7 +36,7 @@ void CBulby::checkBluetooth()
 	}
 }
 
-void CBulby::checkDisplay()
+void CBulby::runDisplay()
 {
 	int ris = frame->getTab()->checkBottoni();
 	tab3 *tab;
@@ -51,7 +51,7 @@ void CBulby::checkDisplay()
 			luce.spegni();
 			bt.invia("off");
 		}
-		else { 
+		else {
 			luce.accendi();
 			bt.invia("on");
 		}
@@ -69,7 +69,7 @@ void CBulby::checkDisplay()
 		tab = (tab3*)frame->getTab();
 		index = tab->getSliderIndex();
 		luce.setColore(index);
-		Serial.println("Index premuto:"+(String)index);
+		Serial.println("Index premuto:" + (String)index);
 		tab->reDrawSelectedColorButton();
 		bt.invia(luce.getColore());
 		break;
@@ -96,6 +96,7 @@ void CBulby::checkDisplay()
 
 void CBulby::resetDisplay()
 {
-	delete frame;
+	if (frame)
+		delete frame;
 	frame = new finestra(luce.getAccesa(), &luce);
 }

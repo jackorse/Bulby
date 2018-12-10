@@ -3,15 +3,14 @@
 tab3::tab3(Adafruit_GFX * gfx, TouchScreen * ts, Colors* vettColori, bool *acceso)
 	:GenericTab(gfx, ts)
 {
+	GenericTab::disableTabButton(2);
 	attivo = nullptr;
 	slider = new colorButtonsSlider(gfx, ts, vettColori);
 	this->acceso = acceso;
-	tabs[2]->setDisabled();
-	this->ts = ts;
 }
 tab3::~tab3()
 {
-	delete slider;
+	if (slider) delete slider;
 }
 
 void tab3::draw()
@@ -33,14 +32,14 @@ int tab3::checkBottoni()
 		restartTimer();
 		if (slider->getIndex() - 3 >= 0)
 		{
-			Serial.println("index: " +(String)(slider->getIndex() - 3));
+			Serial.println("index: " + (String)(slider->getIndex() - 3));
 			slider->setIndex(slider->getIndex() - 3);
 		}
 		else
 		{
 			slider->setIndex(0);
 		}
-		slider->draw(); 
+		slider->draw();
 		return -1;
 	case  DESTRA_BUTTON:
 		restartTimer();
@@ -75,7 +74,7 @@ int tab3::getSliderIndex()
 
 void tab3::reDrawSelectedColorButton()
 {
-	if (attivo) 
+	if (attivo)
 	{
 		delete attivo;
 	}

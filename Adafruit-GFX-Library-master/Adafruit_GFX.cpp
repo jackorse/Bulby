@@ -1695,7 +1695,7 @@ boolean Adafruit_GFX_Button::justPressed() { return (currstate && !laststate); }
 /**************************************************************************/
 boolean Adafruit_GFX_Button::justReleased() { return (!currstate && laststate); }
 
-void Adafruit_GFX_Button::drawButtonConSpigoli(boolean inverted)
+void Adafruit_GFX_Button::drawButtonSquadrato(boolean inverted)
 {
 	uint16_t fill, outline, text;
 

@@ -3,9 +3,9 @@
 
 
 homeTab::homeTab(Adafruit_GFX * gfx, TouchScreen * ts)
+	:abstractTab(gfx, ts)
 {
-	this->ts = ts;
-	this->gfx = gfx;
+	Serial.println("hometab inizializzata");
 }
 
 homeTab::~homeTab()

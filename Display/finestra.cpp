@@ -12,7 +12,6 @@ finestra::finestra(bool *accesa, CLuce * luce)
 	reset();
 	begin(0x9341);
 	ts = new TouchScreen(XP, YP, XM, YM, 300);
-	fillScreen(RED);
 	setRotation(3);
 	tab = new homeTab(this, ts);
 	tab->draw();
@@ -22,8 +21,8 @@ finestra::finestra(bool *accesa, CLuce * luce)
 
 finestra::~finestra()
 {
-	delete ts;
-	delete tab;
+	if (ts) delete ts;
+	if (tab) delete tab;
 }
 
 void finestra::setTab(int index)
@@ -32,8 +31,10 @@ void finestra::setTab(int index)
 		return;
 	else
 	{
-		delete tab;
-		Serial.println("tab deletato");
+		if (tab) {
+			delete tab;
+			Serial.println("tab deletato");
+		}
 		switch (index)
 		{
 		case 0:
@@ -46,7 +47,7 @@ void finestra::setTab(int index)
 			tab = new tab2(this, ts, luce);
 			break;
 		case 3:
-			tab = new tab3(this, ts,luce->getColori(), accesa);
+			tab = new tab3(this, ts, luce->getColori(), accesa);
 			break;
 		default:
 			break;

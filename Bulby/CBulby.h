@@ -14,6 +14,6 @@ public:
 	CBulby();
 	~CBulby();
 	void checkBluetooth();
-	void checkDisplay();
+	void runDisplay();
 	void resetDisplay();
 };

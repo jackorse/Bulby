@@ -3,8 +3,8 @@
 
 
 GenericTab::GenericTab(Adafruit_GFX* gfx, TouchScreen* ts)
+	:abstractTab(gfx, ts)
 {
-	this->gfx = gfx;
 	home = new button(gfx, 0, 0, 80, 30, WHITE, BLACK, "HOME", ts);
 	Serial.println("inizializzo");
 	delay(10);
@@ -18,10 +18,10 @@ GenericTab::GenericTab(Adafruit_GFX* gfx, TouchScreen* ts)
 GenericTab::~GenericTab()
 {
 	Serial.println("deleting genericTab");
-	delete tabs[0];
-	delete tabs[1];
-	delete tabs[2];
-	delete home;
+	for (int i = 0; i < 3; i++)
+		if (tabs[i])
+			delete tabs[i];
+	if (home) delete home;
 }
 
 tabButton* GenericTab::getTabButton(int index)
@@ -32,9 +32,9 @@ tabButton* GenericTab::getTabButton(int index)
 void GenericTab::draw()
 {
 	gfx->fillScreen(WHITE);
-	
+
 	Serial.println("drawing tabs...");
-	home->drawButtonConSpigoli();
+	home->drawButtonSquadrato();
 	for (int i = 0; i < 3; i++)
 	{
 		tabs[i]->drawButton();
@@ -53,7 +53,7 @@ int GenericTab::checkBottoni()
 	{
 		return HOME_BUTTON;
 	}
-	for (int i = 0; i < 3; i++) 
+	for (int i = 0; i < 3; i++)
 	{
 		if (tabs[i]->checkTouch())
 		{
@@ -66,4 +66,10 @@ int GenericTab::checkBottoni()
 void GenericTab::restartTimer()
 {
 	startTime = millis();
+}
+
+void GenericTab::disableTabButton(int index)
+{
+	if (index >= 0 && index <= 2)
+		tabs[index]->setDisabled();
 }

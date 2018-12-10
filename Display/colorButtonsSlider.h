@@ -16,7 +16,7 @@ private:
 	Colors* vettColori;
 	Adafruit_GFX* gfx;
 	TouchScreen* ts;
-	void elimina();
+	void eliminaSlider();
 
 public:
 	colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Colors *vettColori);

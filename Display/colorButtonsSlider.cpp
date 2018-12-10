@@ -2,7 +2,7 @@
 
 
 
-void colorButtonsSlider::elimina()
+void colorButtonsSlider::eliminaSlider()
 {
 	for (int i = 0; i < 3; i++)
 		if (buttons[i])
@@ -22,9 +22,9 @@ colorButtonsSlider::colorButtonsSlider(Adafruit_GFX* gfx, TouchScreen* ts, Color
 
 colorButtonsSlider::~colorButtonsSlider()
 {
-	delete destra;
-	delete sinistra;
-	elimina();
+	if (destra) delete destra;
+	if (sinistra) delete sinistra;
+	eliminaSlider();
 }
 
 int colorButtonsSlider::checkTouch()
@@ -50,15 +50,13 @@ int colorButtonsSlider::checkTouch()
 	}
 }
 
-
-
 void colorButtonsSlider::setIndex(int i)
 {
 	index = i;
-	elimina();
+	eliminaSlider();
 	for (int i = 0; i < 3; i++)
 	{
-		if (index + i  == 16 )
+		if (index + i == 16)
 		{
 			buttons[i] = new button(gfx, (i + 1) * 70, 100, 50, 50, Colors::getColore((vettColori->get(index) + i)->getColore()), WHITE, "L", ts);
 		}

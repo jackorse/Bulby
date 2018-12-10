@@ -36,8 +36,8 @@ void tabButton::setDisabled()
 
 void tabButton::drawButton()
 {
-	Adafruit_GFX_Button::drawButtonConSpigoli(true);
+	Adafruit_GFX_Button::drawButtonSquadrato(true);
 	while (ts->isTouching());
-	Adafruit_GFX_Button::drawButtonConSpigoli();
+	Adafruit_GFX_Button::drawButtonSquadrato();
 }
 

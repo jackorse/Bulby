@@ -5,16 +5,16 @@
 tab2::tab2(Adafruit_GFX * gfx, TouchScreen * ts, CLuce* colore)
 	:GenericTab(gfx, ts)
 {
+	GenericTab::disableTabButton(1);
 	this->colore = colore;
 	piu = new button(gfx, 185, 100, 50, 50, WHITE, BLACK, "+", ts);
 	meno = new button(gfx, 85, 100, 50, 50, WHITE, BLACK, "-", ts);
-	tabs[1]->setDisabled();
 }
 
 tab2::~tab2()
 {
-	delete piu;
-	delete meno;
+	if(piu) delete piu;
+	if(meno) delete meno;
 }
 
 
