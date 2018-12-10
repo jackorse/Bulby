@@ -1711,7 +1711,9 @@ void Adafruit_GFX_Button::drawButtonConSpigoli(boolean inverted)
 	}
 
 	_gfx->fillRect(_x1, _y1, _w, _h, fill);
-	_gfx->drawRect(_x1, _y1, _w, _h, outline);
+
+	_gfx->drawLine(_x1, _y1 + _h, _x1 + _w, _y1 + _h, _outlinecolor);
+	_gfx->drawLine(_x1 + _w, _y1, _x1 + _w, _y1 + _h, _outlinecolor);
 
 	_gfx->setCursor(_x1 + (_w / 2) - (strlen(_label) * 3 * _textsize),
 		_y1 + (_h / 2) - (4 * _textsize));

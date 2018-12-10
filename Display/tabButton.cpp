@@ -7,7 +7,7 @@ tabButton::tabButton()
 }
 
 tabButton::tabButton(Adafruit_GFX* gfx, int x, int y, int numTab, TouchScreen* ts)
-	: button(gfx, x, y, 107, 60, WHITE, BLACK, itoa(numTab, NULL, 10), ts)
+	: button(gfx, x, y, 107, 60, BLACK, WHITE, itoa(numTab, NULL, 10), ts)
 {
 	this->numTab = numTab;
 	this->gfx = gfx;
@@ -30,8 +30,8 @@ String tabButton::toString()
 
 void tabButton::setDisabled()
 {
-	setColor(BLACK);
-	setTextColor(WHITE);
+	setColor(WHITE);
+	setTextColor(BLACK);
 }
 
 void tabButton::drawButton()

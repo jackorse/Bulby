@@ -34,7 +34,7 @@ void GenericTab::draw()
 	gfx->fillScreen(WHITE);
 	
 	Serial.println("drawing tabs...");
-	home->drawButton();
+	home->drawButtonConSpigoli();
 	for (int i = 0; i < 3; i++)
 	{
 		tabs[i]->drawButton();
