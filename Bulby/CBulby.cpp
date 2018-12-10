@@ -1,18 +1,32 @@
 #include "CBulby.h"
 
 
-
+/**
+ * @brief costruttore
+ *
+ * inizializza {@link #frame}
+ */
 CBulby::CBulby()
 {
 	frame = new finestra(luce.getAccesa(), &luce);
 }
 
-
+/**
+ * @brief distruttore
+ *
+ * elimina {@link #frame}
+ */
 CBulby::~CBulby()
 {
 	delete frame;
 }
 
+/**
+ * @brief controlla il bluetooth.
+ *
+ * Modifica lo stato della {@link #luce} in base a quello che legge dal bluetooth {@link #bt}
+ * @see MyBluetooth#leggi()
+ */
 void CBulby::checkBluetooth()
 {
 	bool isColore = true;
@@ -36,6 +50,11 @@ void CBulby::checkBluetooth()
 	}
 }
 
+/**
+ * @brief run display
+ *
+ * cambia lo stato della {@link #luce} in base ai pulsanti premuti sul display
+ */
 void CBulby::runDisplay()
 {
 	int ris = frame->getTab()->checkBottoni();
@@ -94,6 +113,11 @@ void CBulby::runDisplay()
 	}
 }
 
+/**
+ * @brief reset diaplay
+ *
+ * elimina e reinizializza {@link #frame}
+ */
 void CBulby::resetDisplay()
 {
 	if (frame)
