@@ -66,6 +66,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)colorButtonsSlider.h">
       <Filter>Header Files\buttons</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h">
+      <Filter>Header Files\buttons</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)finestra.cpp">
@@ -102,6 +105,9 @@
       <Filter>Source Files\buttons</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)colorButtonsSlider.cpp">
+      <Filter>Source Files\buttons</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp">
       <Filter>Source Files\buttons</Filter>
     </ClCompile>
   </ItemGroup>

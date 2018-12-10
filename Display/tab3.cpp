@@ -11,6 +11,7 @@ tab3::tab3(Adafruit_GFX * gfx, TouchScreen * ts, Colors* vettColori, bool *acces
 tab3::~tab3()
 {
 	if (slider) delete slider;
+	if (attivo) delete attivo;
 }
 
 void tab3::draw()

@@ -1,5 +1,6 @@
 #pragma once
 #include"button.h"
+#include"homeButton.h"
 #include"tabButton.h"
 #include"abstractTab.h"
 #define HOME_BUTTON 0
@@ -11,7 +12,7 @@ class GenericTab : public abstractTab
 {
 private:
 	unsigned long  startTime;
-	button* home;
+	homeButton* home;
 	tabButton* tabs[3];
 public:
 	GenericTab(Adafruit_GFX *gfx, TouchScreen* ts);

@@ -5,7 +5,7 @@
 GenericTab::GenericTab(Adafruit_GFX* gfx, TouchScreen* ts)
 	:abstractTab(gfx, ts)
 {
-	home = new button(gfx, 0, 0, 80, 30, WHITE, BLACK, "HOME", ts);
+	home = new homeButton(gfx, ts, 0, 0);
 	Serial.println("inizializzo");
 	delay(10);
 	tabs[0] = new tabButton(gfx, 0, 180, 1, ts);

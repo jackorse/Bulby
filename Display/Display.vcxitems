@@ -23,6 +23,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)colorButtonsSlider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)finestra.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)GenericTab.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)homeButton.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)homeTab.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)luceButton.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)RGBColors.h" />
@@ -38,6 +39,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)colorButtonsSlider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)finestra.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)GenericTab.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)homeButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)homeTab.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)luceButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)tab1.cpp" />

@@ -1695,6 +1695,9 @@ boolean Adafruit_GFX_Button::justPressed() { return (currstate && !laststate); }
 /**************************************************************************/
 boolean Adafruit_GFX_Button::justReleased() { return (!currstate && laststate); }
 
+/**
+* @author Giacomo Orsenigo
+*/
 void Adafruit_GFX_Button::drawButtonSquadrato(boolean inverted)
 {
 	uint16_t fill, outline, text;
@@ -1711,6 +1714,7 @@ void Adafruit_GFX_Button::drawButtonSquadrato(boolean inverted)
 	}
 
 	_gfx->fillRect(_x1, _y1, _w, _h, fill);
+	//_gfx->drawRect(_x1, _y1, _w, _h, outline);
 
 	_gfx->drawLine(_x1, _y1 + _h, _x1 + _w, _y1 + _h, _outlinecolor);
 	_gfx->drawLine(_x1 + _w, _y1, _x1 + _w, _y1 + _h, _outlinecolor);
