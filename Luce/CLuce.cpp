@@ -1,39 +1,79 @@
 #include "CLuce.h"
 
-
+/**
+ * @brief costruttore
+ *
+ * @see #setLuce(String,int)
+ */
 CLuce::CLuce()
 {
 	setLuce("bianco", 100);
 }
 
+/**
+ * @brief costruttore *
+ * @param colore
+ * @param intensità
+ * @see #setLuce(String,int)
+ */
 CLuce::CLuce(String colore, int intensita)
 {
 	setLuce(colore, intensita);
 }
 
+/**
+ * @brief costruttore
+ *
+ * @param colore
+ * @see #setLuce(String,int)
+ */
 CLuce::CLuce(String colore)
 {
 	setLuce(colore, 100);
 }
 
 
+/**
+ * @brief distruttore
+ */
 CLuce::~CLuce()
 {
 }
 
+/**
+ * @brief accendi
+ *
+ * accende la luce tramite IR e modifica {@link #accesa}
+ * @see MyIR#accendi()
+ */
 void CLuce::accendi()
 {
 	ir.accendi();
 	accesa = true;
 }
 
+/**
+ * @brief spegni
+ *
+ * spegne la luce tramite IR e modifica {@link #accesa}
+ * @see MyIR#spegni()
+ */
 void CLuce::spegni()
 {
 	ir.spegni();
 	accesa = false;
 }
 
-
+/**
+ * @brief set luce
+ *
+ * accende e inizializza la luce
+ * @param colore
+ * @param intensità
+ * @see #accendi()
+ * @see #setInntensita()
+ * @see #setColore()
+ */
 void CLuce::setLuce(String colore, int intensita)
 {
 	accendi();
@@ -43,6 +83,13 @@ void CLuce::setLuce(String colore, int intensita)
 	//this->getAttivo()->setIntensita(20);
 }
 
+/**
+ * @brief set colore
+ *
+ * imposta il colore dalle luce tramite IR e setta il colore attivo
+ * @param colore da attivare
+ * @see MyIR#inviaColore(String)
+ */
 void CLuce::setColore(String colore)
 {
 	Serial.println("SET COLORE");
@@ -115,6 +162,12 @@ void CLuce::setColore(int index)
 	setColore(colori.get(index)->getColore());
 }
 
+/**
+ * @brief set intensità
+ *
+ * modifica l'intensità {@link #intensita}
+ * @see #changeIntensita()
+ */
 void CLuce::setIntensita(int intensita)
 {
 	if (intensita >= 1 && intensita <= 100)
@@ -123,37 +176,76 @@ void CLuce::setIntensita(int intensita)
 	changeIntensita();
 }
 
+/**
+ * @brief get colore
+ *
+ * @return colore attivo
+ * @see #getAttivo()
+ */
 String CLuce::getColore()
 {
 	return getAttivo()->getColore();
 }
 
+/**
+ * @brief get intensità
+ *
+ * @return intensità {@link #intensita}
+ */
 int CLuce::getIntensita()
 {
 	//return getAttivo()->getIntensita() * 5; //trasforma in %
 	return intensita * 5;
 }
 
+/**
+ * @brief get colore attivo
+ *
+ * @return colore attivo
+ * @see CColore#getAttivo()
+ */
 CColore* CLuce::getAttivo()
 {
 	return colori.getAttivo();
 }
 
+/**
+ * @brief is accesa
+ *
+ * @return true se la luce è accesa, false se è spenta
+ */
 bool CLuce::isAccesa()
 {
 	return accesa;
 }
 
+/**
+ * @brief get accesa
+ *
+ * @return puntatore a {@link #accesa}
+ */
 bool * CLuce::getAccesa()
 {
 	return &accesa;
 }
 
+/**
+ * @brief get colore
+ *
+ * @return puntatore al vettore dei colori {@link #colori}
+ */
 Colors * CLuce::getColori()
 {
 	return &colori;
 }
 
+/**
+ * @brief change intensità
+ *
+ * Imposta tramite IR l'intensità attuale alla luce, in base all'intensità di ogni colore
+ * @see MyIR#diminuisciIntensita()
+ * @see MyIR#aumentaIntensita()
+ */
 void CLuce::changeIntensita()
 {
 	int diff = this->getAttivo()->getIntensita() - intensita;
