@@ -33,5 +33,6 @@ public:
 	bool* getAccesa();
 	Colors* getColori();
 	void changeIntensita();
+	String getColoreSimile();
 };
 

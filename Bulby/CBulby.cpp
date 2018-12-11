@@ -90,7 +90,7 @@ void CBulby::runDisplay()
 		luce.setColore(index);
 		Serial.println("Index premuto:" + (String)index);
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColore());
+		bt.invia(luce.getColoreSimile());
 		break;
 	case COLORE2_BUTTON:
 		Serial.println("Colore premuto: 2");
@@ -99,7 +99,7 @@ void CBulby::runDisplay()
 		luce.setColore(index + 1);
 		Serial.println("Index premuto:" + (String)(index + 1));
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColore());
+		bt.invia(luce.getColoreSimile());
 		break;
 	case COLORE3_BUTTON:
 		Serial.println("Colore premuto: 3");
@@ -108,7 +108,7 @@ void CBulby::runDisplay()
 		Serial.println("Index premuto:" + (String)(index + 2));
 		luce.setColore(index + 2);
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColore());
+		bt.invia(luce.getColoreSimile());
 		break;
 	}
 }

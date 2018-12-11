@@ -271,3 +271,36 @@ void CLuce::changeIntensita()
 	}
 	this->getAttivo()->setIntensita(intensita);
 }
+
+String CLuce::getColoreSimile()
+{
+	String colore = getColore();
+	if (colore == "gialloverde") {
+		return "giallo";
+	}
+	else if (colore == "bluviola") {
+		return "blu";
+	}
+	else if (colore == "giallancione") {
+		return "arancione";//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else if (colore == "azzurrochiaro") {
+		return "azzurro";
+	}
+	else if (colore == "viola") {
+		return "rosa";
+	}
+	else if (colore == "azzurroverde") {
+		return "azzurro";
+	}
+	else if (colore == "azzurroverde2") {
+		return "azzurro";
+	}
+	else if (colore == "rgbLento") {
+		return ""; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else if (colore == "rgbVeloce") {
+		return ""; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else return colore;
+}
