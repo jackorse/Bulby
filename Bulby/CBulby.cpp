@@ -29,25 +29,34 @@ CBulby::~CBulby()
  */
 void CBulby::checkBluetooth()
 {
-	bool isColore = true;
-	String letto = bt.leggi();
-	if (letto != "")
+	if (bt.isConnesso())
 	{
-		for (int i = 0; i < letto.length(); i++)
-			if (letto[i] >= '0'&&letto[i] <= '9')
-				isColore = false;
-		if (isColore)
-			if (letto == "ON")
-				luce.accendi();
-			else if (letto == "OFF")
-				luce.spegni();
-			else
+		bool isColore = true;
+		String letto = bt.leggi();
+		if (letto != "")
+		{
+			for (int i = 0; i < letto.length(); i++)
+				if (letto[i] >= '0'&&letto[i] <= '9')
+					isColore = false;
+			if (isColore)
 			{
-				luce.setColore(letto);
+				if (letto == "ON")
+					luce.accendi();
+				else if (letto == "OFF")
+					luce.spegni();
+				else if (letto == "qualcosa")					///////////TODO		<<<<<<<<<<<<<<<<<<<<<<<<<<<
+					luce.setSpegnimentoAutomatico(true);
+				else if (letto == "qualcos'altro")				///////////TODO		<<<<<<<<<<<<<<<<<<<<<<<<<<<
+					luce.setSpegnimentoAutomatico(false);
+				else
+					luce.setColore(letto);
 			}
-		else
-			luce.setIntensita(letto.toInt());
+			else
+				luce.setIntensita(letto.toInt());
+		}
 	}
+	else if (luce.isSpegnimentoAutomatico() && millis() > 20000)		//se è acceso da più di 20 sec. (tempo di connettersi)
+		luce.spegni();
 }
 
 /**

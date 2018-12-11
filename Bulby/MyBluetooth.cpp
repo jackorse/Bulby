@@ -4,7 +4,7 @@
 /**
  * @brief costruttore
  *
- * inizializza la comunicazione seriale sulla {@link #Serial1} 
+ * inizializza la comunicazione seriale sulla {@link #Serial1}
  */
 MyBluetooth::MyBluetooth()
 {
@@ -48,4 +48,9 @@ String MyBluetooth::leggi()
 void MyBluetooth::invia(String colore)
 {
 	Serial1.print(colore);
+}
+
+bool MyBluetooth::isConnesso()
+{
+	return digitalRead(STATE_PIN) == HIGH;
 }

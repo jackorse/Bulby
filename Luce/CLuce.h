@@ -15,14 +15,15 @@ private:
 	Colors colori;
 	bool accesa;
 	unsigned short intensita;
+	bool spegnimentoAutomatico;
 public:
 	CLuce();
-	CLuce(String colore, int intensita);
-	CLuce(String colore);
+	CLuce(String colore, int intensita, bool spegnimentoAutomatico = false);
+	CLuce(String colore, bool spegnimentoAutomatico = false);
 	~CLuce();
 	void accendi();
 	void spegni();
-	void setLuce(String colore, int intensita);
+	void setLuce(String colore, int intensita, bool spegnimentoAutomatico);
 	void setColore(String colore);
 	void setColore(int index);
 	void setIntensita(int intensita);
@@ -34,5 +35,7 @@ public:
 	Colors* getColori();
 	void changeIntensita();
 	String getColoreSimile();
+	void setSpegnimentoAutomatico(bool s);
+	bool isSpegnimentoAutomatico();
 };
 

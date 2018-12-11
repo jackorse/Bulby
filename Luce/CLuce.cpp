@@ -7,7 +7,7 @@
  */
 CLuce::CLuce()
 {
-	setLuce("bianco", 100);
+	setLuce("bianco", 100, false);
 }
 
 /**
@@ -16,9 +16,9 @@ CLuce::CLuce()
  * @param intensità
  * @see #setLuce(String,int)
  */
-CLuce::CLuce(String colore, int intensita)
+CLuce::CLuce(String colore, int intensita, bool spegnimentoAutomatico)
 {
-	setLuce(colore, intensita);
+	setLuce(colore, intensita, spegnimentoAutomatico);
 }
 
 /**
@@ -27,9 +27,9 @@ CLuce::CLuce(String colore, int intensita)
  * @param colore
  * @see #setLuce(String,int)
  */
-CLuce::CLuce(String colore)
+CLuce::CLuce(String colore, bool spegnimentoAutomatico)
 {
-	setLuce(colore, 100);
+	setLuce(colore, 100, spegnimentoAutomatico);
 }
 
 
@@ -74,8 +74,9 @@ void CLuce::spegni()
  * @see #setInntensita()
  * @see #setColore()
  */
-void CLuce::setLuce(String colore, int intensita)
+void CLuce::setLuce(String colore, int intensita, bool spegnimentoAutomatico)
 {
+	this->spegnimentoAutomatico = spegnimentoAutomatico;
 	accendi();
 	colori.get(colore)->attiva();
 	setIntensita(intensita);
@@ -303,4 +304,14 @@ String CLuce::getColoreSimile()
 		return ""; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
 	}
 	else return colore;
+}
+
+void CLuce::setSpegnimentoAutomatico(bool s)
+{
+	spegnimentoAutomatico = s;
+}
+
+bool CLuce::isSpegnimentoAutomatico()
+{
+	return spegnimentoAutomatico;
 }
