@@ -31,28 +31,26 @@ void CBulby::checkBluetooth()
 {
 	if (bt.isConnesso())
 	{
-		bool isColore = true;
+		bool isIntensita = true;
 		String letto = bt.leggi();
 		if (letto != "")
 		{
 			for (int i = 0; i < letto.length(); i++)
-				if (letto[i] >= '0'&&letto[i] <= '9')
-					isColore = false;
-			if (isColore)
-			{
+				if (letto[i] < '0' && letto[i] > '9')
+					isIntensita = false;
+			if (isIntensita)
+				luce.setIntensita(letto.toInt());
+			else
 				if (letto == "ON")
 					luce.accendi();
 				else if (letto == "OFF")
 					luce.spegni();
-				else if (letto == "qualcosa")					///////////TODO		<<<<<<<<<<<<<<<<<<<<<<<<<<<
+				else if (letto == "ferlin")
 					luce.setSpegnimentoAutomatico(true);
-				else if (letto == "qualcos'altro")				///////////TODO		<<<<<<<<<<<<<<<<<<<<<<<<<<<
+				else if (letto == "ferrareis")
 					luce.setSpegnimentoAutomatico(false);
 				else
 					luce.setColore(letto);
-			}
-			else
-				luce.setIntensita(letto.toInt());
 		}
 	}
 	else if (luce.isSpegnimentoAutomatico() && millis() > 20000)		//se è acceso da più di 20 sec. (tempo di connettersi)
