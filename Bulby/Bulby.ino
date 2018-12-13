@@ -30,14 +30,12 @@ void setup()
 {
 	Serial.begin(9600);
 	Serial.println("START");
-	delay(10);
 	Serial.println("sto per disegnare");
 	//frame->getAttiva()->draw();
 	//pinMode(13, OUTPUT);
 	//frame = new finestra();
 	bulby = new CBulby();
 	Serial.println("fine setup");
-	delay(10);
 }
 // Add the main program code into the continuous loop() function
 void loop()

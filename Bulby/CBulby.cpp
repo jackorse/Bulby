@@ -36,7 +36,7 @@ void CBulby::checkBluetooth()
 		if (letto != "")
 		{
 			for (int i = 0; i < letto.length(); i++)
-				if (letto[i] < '0' && letto[i] > '9')
+				if (letto[i] < '0' || letto[i] > '9')
 					isIntensita = false;
 			if (isIntensita)
 				luce.setIntensita(letto.toInt());

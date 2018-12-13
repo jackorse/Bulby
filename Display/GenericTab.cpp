@@ -7,7 +7,7 @@ GenericTab::GenericTab(Adafruit_GFX* gfx, TouchScreen* ts)
 {
 	home = new homeButton(gfx, ts, 0, 0);
 	Serial.println("inizializzo");
-	delay(10);
+	//delay(10);
 	tabs[0] = new tabButton(gfx, 0, 180, 1, ts);
 	tabs[1] = new tabButton(gfx, 107, 180, 2, ts);
 	tabs[2] = new tabButton(gfx, 214, 180, 3, ts);
