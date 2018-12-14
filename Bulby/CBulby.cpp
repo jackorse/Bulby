@@ -8,7 +8,7 @@
  */
 CBulby::CBulby()
 {
-	frame = new finestra(luce.getAccesa(), &luce);
+	frame = new finestra(luce.getAccesa(), &luce, bt.isConnesso());
 }
 
 /**

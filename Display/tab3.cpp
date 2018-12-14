@@ -17,7 +17,7 @@ tab3::~tab3()
 void tab3::draw()
 {
 	GenericTab::draw();
-	gfx->setCursor(50, 50);
+	gfx->setCursor(30, 50);
 	gfx->setTextColor(BLACK);
 	gfx->println("COLORE ATTUALE:");
 	slider->draw();
@@ -82,15 +82,15 @@ void tab3::reDrawSelectedColorButton()
 	Serial.println("Index colore attivo: " + (String)(slider->getVettColor()->getAttivo()->getIndex()));
 	if (slider->getVettColor()->getAttivo()->getIndex() == 16)
 	{
-		attivo = new button(gfx, 230, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "L", ts);
+		attivo = new button(gfx, 210, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "L", ts);
 	}
 	else if (slider->getVettColor()->getAttivo()->getIndex() == 17)
 	{
-		attivo = new button(gfx, 230, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "V", ts);
+		attivo = new button(gfx, 210, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "V", ts);
 	}
 	else
 	{
-		attivo = new button(gfx, 230, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "", ts);
+		attivo = new button(gfx, 210, 35, 50, 50, Colors::getColore(slider->getVettColor()->getAttivo()->getColore()), WHITE, "", ts);
 	}
 	attivo->drawButton();
 }
