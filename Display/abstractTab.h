@@ -6,10 +6,13 @@ class abstractTab
 protected:
 	Adafruit_GFX* gfx;
 	TouchScreen* ts;
+private:
+	String id;
 public:
-	abstractTab(Adafruit_GFX *gfx, TouchScreen* ts);
+	abstractTab(Adafruit_GFX *gfx, TouchScreen* ts,String ID);
 	virtual ~abstractTab();
 	virtual void draw() = 0;
 	virtual int checkBottoni() = 0;
+	String toString();
 };
 

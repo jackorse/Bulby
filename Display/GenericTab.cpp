@@ -3,7 +3,7 @@
 
 
 GenericTab::GenericTab(Adafruit_GFX* gfx, TouchScreen* ts)
-	:abstractTab(gfx, ts)
+	:abstractTab(gfx, ts, "TAB")
 {
 	home = new homeButton(gfx, ts, 0, 0);
 	Serial.println("inizializzo");

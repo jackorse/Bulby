@@ -46,6 +46,7 @@
 #include"tab3.h"
 #include"GenericTab.h"
 #include"Adafruit_TFTLCD.h"
+#include"..\Bulby\MyBluetooth.h"
 class finestra : public Adafruit_TFTLCD
 {
 private:

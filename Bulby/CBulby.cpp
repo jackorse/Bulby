@@ -8,7 +8,9 @@
  */
 CBulby::CBulby()
 {
-	frame = new finestra(luce.getAccesa(), &luce, bt.isConnesso());
+	frame = new finestra(luce.getAccesa(), &luce, &bt);
+	//connectedTime = -1;
+	oldBtState = false;
 }
 
 /**
@@ -29,8 +31,24 @@ CBulby::~CBulby()
  */
 void CBulby::checkBluetooth()
 {
+	if (oldBtState != bt.isConnesso())
+	{
+		Serial.println("cambio stato bluetooth");
+		oldBtState = !oldBtState;
+		if (frame->getTab()->toString() == "HOME")
+			((homeTab*)frame->getTab())->update();
+		if (oldBtState)
+		{
+			bt.invia(luce.getColoreSimile());
+			delay(1000);
+			bt.invia((String)luce.getIntensita());
+		}
+	}
 	if (bt.isConnesso())
 	{
+		//if (connectedTime == -1)
+		//	connectedTime = millis();
+
 		bool isIntensita = true;
 		String letto = bt.leggi();
 		if (letto != "")
@@ -45,16 +63,22 @@ void CBulby::checkBluetooth()
 					luce.accendi();
 				else if (letto == "OFF")
 					luce.spegni();
-				else if (letto == "ferlin")
-					luce.setSpegnimentoAutomatico(true);
-				else if (letto == "ferrareis")
-					luce.setSpegnimentoAutomatico(false);
+			//else if (letto == "ferlin")
+			//	luce.setSpegnimentoAutomatico(true);
+			//else if (letto == "ferrareis")
+			//	luce.setSpegnimentoAutomatico(false);
 				else
 					luce.setColore(letto);
 		}
 	}
-	else if (luce.isSpegnimentoAutomatico() && millis() > 20000)		//se è acceso da più di 20 sec. (tempo di connettersi)
-		luce.spegni();
+	else
+	{
+		//if (connectedTime != -1)
+		//	connectedTime = -1;
+		//SPEGNIMENTO AUTOMATICO QUANDO BLUETOOTH SI DISCONNETTE
+		//if (luce.isSpegnimentoAutomatico() && millis() > 20000)		//se è acceso da più di 20 sec. (tempo di connettersi)
+		//	luce.spegni();
+	}
 }
 
 /**
@@ -129,5 +153,5 @@ void CBulby::resetDisplay()
 {
 	if (frame)
 		delete frame;
-	frame = new finestra(luce.getAccesa(), &luce);
+	frame = new finestra(luce.getAccesa(), &luce, &bt);
 }
