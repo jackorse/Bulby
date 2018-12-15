@@ -39,9 +39,9 @@ void CBulby::checkBluetooth()
 			((homeTab*)frame->getTab())->update();
 		if (oldBtState)
 		{
-			bt.invia(luce.getColoreSimile());
-			delay(1000);
-			bt.invia((String)luce.getIntensita());
+			bt.invia("F;"+luce.getColoreSimile());
+			delay(2000);
+			bt.invia("F;"+(String)luce.getIntensita());
 		}
 	}
 	if (bt.isConnesso())
@@ -99,20 +99,20 @@ void CBulby::runDisplay()
 	case LUCE_BUTTON:	//pulsante luce premuto
 		if (luce.isAccesa()) {
 			luce.spegni();
-			bt.invia("off");
+			//bt.invia("off");
 		}
 		else {
 			luce.accendi();
-			bt.invia("on");
+			//bt.invia("on");
 		}
 		break;
 	case MENO_BUTTON:
 		//luce.setIntensita(luce.getIntensita()/* - 5*/);
-		bt.invia((String)luce.getIntensita());
+		//bt.invia((String)luce.getIntensita());
 		break;
 	case PIU_BUTTON:
 		//luce.setIntensita(luce.getIntensita() /*+ 5*/);
-		bt.invia((String)luce.getIntensita());
+		//bt.invia((String)luce.getIntensita());
 		break;
 	case COLORE1_BUTTON:
 		Serial.println("Colore premuto: 1");
@@ -121,7 +121,7 @@ void CBulby::runDisplay()
 		luce.setColore(index);
 		Serial.println("Index premuto:" + (String)index);
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColoreSimile());
+		//bt.invia(luce.getColoreSimile());
 		break;
 	case COLORE2_BUTTON:
 		Serial.println("Colore premuto: 2");
@@ -130,7 +130,7 @@ void CBulby::runDisplay()
 		luce.setColore(index + 1);
 		Serial.println("Index premuto:" + (String)(index + 1));
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColoreSimile());
+		//bt.invia(luce.getColoreSimile());
 		break;
 	case COLORE3_BUTTON:
 		Serial.println("Colore premuto: 3");
@@ -139,7 +139,7 @@ void CBulby::runDisplay()
 		Serial.println("Index premuto:" + (String)(index + 2));
 		luce.setColore(index + 2);
 		tab->reDrawSelectedColorButton();
-		bt.invia(luce.getColoreSimile());
+		//bt.invia(luce.getColoreSimile());
 		break;
 	}
 }

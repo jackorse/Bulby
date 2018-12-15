@@ -47,7 +47,10 @@ String MyBluetooth::leggi()
  */
 void MyBluetooth::invia(String colore)
 {
-	Serial1.print(colore);
+	if (colore.startsWith("F;"))
+		Serial1.print(colore);
+	else
+		Serial1.print(";" + colore);
 }
 
 bool MyBluetooth::isConnesso()
