@@ -39,8 +39,17 @@ void CBulby::checkBluetooth()
 			((homeTab*)frame->getTab())->update();
 		if (oldBtState)
 		{
+			if (luce.isAccesa())
+			{
+				bt.invia("F;ON");
+			}
+			else
+			{
+				bt.invia("F;OFF");
+			}
+			delay(1000);
 			bt.invia("F;"+luce.getColoreSimile());
-			delay(2000);
+			delay(1000);
 			bt.invia("F;"+(String)luce.getIntensita());
 		}
 	}
