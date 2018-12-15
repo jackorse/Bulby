@@ -76,6 +76,7 @@ void CLuce::spegni()
  */
 void CLuce::setLuce(String colore, int intensita, bool spegnimentoAutomatico)
 {
+	delay(1);
 	this->spegnimentoAutomatico = spegnimentoAutomatico;
 	accendi();
 	colori.get(colore)->attiva();

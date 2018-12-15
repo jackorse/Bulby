@@ -1,7 +1,7 @@
 #pragma once
 #include<HardwareSerial.h>
 #include<Arduino.h>
-#define STATE_PIN 0			//TODO		<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#define STATE_PIN 31
 
 /**
 * Classe che gestisce la comunicazione Bluetooth

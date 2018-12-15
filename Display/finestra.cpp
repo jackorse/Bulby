@@ -7,16 +7,17 @@
 /**
 <summary>text</summary>
 */
-finestra::finestra(bool *accesa, CLuce * luce)
+finestra::finestra(bool *accesa, CLuce * luce, MyBluetooth* bt)
 	:Adafruit_TFTLCD(LCD_CS, LCD_CD, LCD_WR, LCD_RD, LCD_RESET)
 {
+	this->bt = bt;
 	this->luce = luce;
 	this->accesa = accesa;
 	reset();
 	begin(0x9341);
 	ts = new TouchScreen(XP, YP, XM, YM, 300);
 	setRotation(3);
-	tab = new homeTab(this, ts);
+	tab = new homeTab(this, ts, bt);
 	tab->draw();
 	index = 0;
 }
@@ -41,7 +42,7 @@ void finestra::setTab(int index)
 		switch (index)
 		{
 		case 0:
-			tab = new homeTab(this, ts);
+			tab = new homeTab(this, ts, bt);
 			break;
 		case 1:
 			tab = new tab1(this, ts, accesa);

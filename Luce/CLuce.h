@@ -18,7 +18,7 @@ private:
 	bool spegnimentoAutomatico;
 public:
 	CLuce();
-	CLuce(String colore, int intensita, bool spegnimentoAutomatico = false);
+	CLuce(String colore, int intensita = 100, bool spegnimentoAutomatico = false);
 	CLuce(String colore, bool spegnimentoAutomatico = false);
 	~CLuce();
 	void accendi();

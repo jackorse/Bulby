@@ -54,3 +54,5 @@ bool MyBluetooth::isConnesso()
 {
 	return digitalRead(STATE_PIN) == HIGH;
 }
+
+

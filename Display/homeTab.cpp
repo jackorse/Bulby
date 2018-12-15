@@ -2,9 +2,11 @@
 
 
 
-homeTab::homeTab(Adafruit_GFX * gfx, TouchScreen * ts)
-	:abstractTab(gfx, ts)
+homeTab::homeTab(Adafruit_GFX * gfx, TouchScreen * ts, MyBluetooth* bt)
+	:abstractTab(gfx, ts, "HOME")
 {
+	//updateTime = -1;
+	this->bt = bt;
 	Serial.println("hometab inizializzata");
 }
 
@@ -21,6 +23,9 @@ void homeTab::draw()
 	gfx->setCursor(60, 60);
 	gfx->setTextColor(YELLOW);
 	gfx->print("Bulby");
+	gfx->setTextColor(WHITE);
+	gfx->setTextSize(3);
+	update();
 }
 
 int homeTab::checkBottoni()
@@ -33,3 +38,22 @@ int homeTab::checkBottoni()
 	}
 	return -1;
 }
+
+void homeTab::update()
+{
+	gfx->fillRect(60, 120, 300, 200, BLACK);
+	if (bt->isConnesso()) {
+		gfx->setCursor(90, 150);
+		gfx->print("connesso");
+	}
+	else {
+		gfx->setCursor(60, 150);
+		gfx->print("non connesso");
+	}
+	//updateTime = millis();
+}
+
+//unsigned long homeTab::getUpdateTime()
+//{
+//	return updateTime;
+//}
