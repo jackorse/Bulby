@@ -3,14 +3,15 @@
 class tabButton : public button
 {
 private: 
-	int numTab;
+	unsigned short numTab;
+	Adafruit_GFX *gfx;
 public:
 	tabButton();
 	tabButton(Adafruit_GFX* gfx, int x,int y,int numTab, TouchScreen* ts);
 	int getNumTab();
 	~tabButton();
-	//virtual void draw();//override;
 	String toString();
 	void setDisabled();
+	virtual void drawButton() override;
 };
 

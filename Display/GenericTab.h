@@ -1,5 +1,6 @@
 #pragma once
 #include"button.h"
+#include"homeButton.h"
 #include"tabButton.h"
 #include"abstractTab.h"
 #define HOME_BUTTON 0
@@ -9,12 +10,10 @@
 using namespace std;
 class GenericTab : public abstractTab
 {
-protected:
-	Adafruit_GFX* gfx;
-	button* home;
-	tabButton* tabs[3];
 private:
 	unsigned long  startTime;
+	homeButton* home;
+	tabButton* tabs[3];
 public:
 	GenericTab(Adafruit_GFX *gfx, TouchScreen* ts);
 	virtual ~GenericTab();
@@ -22,6 +21,7 @@ public:
 	virtual void draw();
 	virtual int checkBottoni() override;
 	void restartTimer();
+	void disableTabButton(int index);
 };
 
 

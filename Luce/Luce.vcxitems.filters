@@ -8,6 +8,9 @@
     <Filter Include="Source Files">
       <UniqueIdentifier>{688d2ab9-fd0d-4aac-984e-461d7d73060f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="IR Library">
+      <UniqueIdentifier>{e31bc552-6bd3-4f59-b512-66bc31e5c7fd}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
@@ -20,8 +23,23 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CLuce.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)Colors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)MyIR.h">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)boarddefs.h">
+      <Filter>IR Library</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)ir_Lego_PF_BitStreamEncoder.h">
+      <Filter>IR Library</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IRremote.h">
+      <Filter>IR Library</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)IRremoteInt.h">
+      <Filter>IR Library</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -31,8 +49,68 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)CLuce.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Colors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)MyIR.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Aiwa.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Denon.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Dish.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_JVC.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Lego_PF.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_LG.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Mitsubishi.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Panasonic.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_RC5_RC6.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Samsung.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sanyo.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sharp.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Sony.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Template.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)ir_Whynter.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)irPronto.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)irRecv.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)IRremote.cpp">
+      <Filter>IR Library</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)irSend.cpp">
+      <Filter>IR Library</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

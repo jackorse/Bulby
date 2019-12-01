@@ -7,9 +7,10 @@ tabButton::tabButton()
 }
 
 tabButton::tabButton(Adafruit_GFX* gfx, int x, int y, int numTab, TouchScreen* ts)
-	: button(gfx, x, y, 50, 50, WHITE, BLACK, itoa(numTab, NULL, 10), ts)
+	: button(gfx, x, y, 107, 60, BLACK, WHITE, itoa(numTab, NULL, 10), ts)
 {
 	this->numTab = numTab;
+	this->gfx = gfx;
 }
 
 int tabButton::getNumTab()
@@ -29,14 +30,14 @@ String tabButton::toString()
 
 void tabButton::setDisabled()
 {
-	setColor(BLACK);
-	setTextColor(WHITE);
+	setColor(WHITE);
+	setTextColor(BLACK);
 }
 
-//void tabButton::draw()
-//{
-//	button::drawButton();
-//	//this->drawChar(5, 5, 'c', BLACK, 10, 10);;
-//	Serial.println("tabButton disegnato");
-//}
+void tabButton::drawButton()
+{
+	Adafruit_GFX_Button::drawButtonSquadrato(true);
+	while (ts->isTouching());
+	Adafruit_GFX_Button::drawButtonSquadrato();
+}
 

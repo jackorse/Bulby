@@ -1,151 +1,318 @@
 #include "CLuce.h"
 
-
+/**
+ * @brief costruttore
+ *
+ * @see #setLuce(String,int)
+ */
 CLuce::CLuce()
 {
-	setLuce("bianco", 100);
+	setLuce("bianco", 100, false);
 }
 
-CLuce::CLuce(String colore, int intensita)
+/**
+ * @brief costruttore *
+ * @param colore
+ * @param intensità
+ * @see #setLuce(String,int)
+ */
+CLuce::CLuce(String colore, int intensita, bool spegnimentoAutomatico)
 {
-	setLuce(colore, intensita);
+	setLuce(colore, intensita, spegnimentoAutomatico);
 }
 
-CLuce::CLuce(String colore)
+/**
+ * @brief costruttore
+ *
+ * @param colore
+ * @see #setLuce(String,int)
+ */
+CLuce::CLuce(String colore, bool spegnimentoAutomatico)
 {
-	setLuce(colore, 100);
+	setLuce(colore, 100, spegnimentoAutomatico);
 }
 
 
+/**
+ * @brief distruttore
+ */
 CLuce::~CLuce()
 {
 }
 
+/**
+ * @brief accendi
+ *
+ * accende la luce tramite IR e modifica {@link #accesa}
+ * @see MyIR#accendi()
+ */
 void CLuce::accendi()
 {
 	ir.accendi();
 	accesa = true;
 }
 
+/**
+ * @brief spegni
+ *
+ * spegne la luce tramite IR e modifica {@link #accesa}
+ * @see MyIR#spegni()
+ */
 void CLuce::spegni()
 {
 	ir.spegni();
 	accesa = false;
 }
 
-
-void CLuce::setLuce(String colore, int intensita)
+/**
+ * @brief set luce
+ *
+ * accende e inizializza la luce
+ * @param colore
+ * @param intensità
+ * @see #accendi()
+ * @see #setInntensita()
+ * @see #setColore()
+ */
+void CLuce::setLuce(String colore, int intensita, bool spegnimentoAutomatico)
 {
+	delay(1);
+	this->spegnimentoAutomatico = spegnimentoAutomatico;
 	accendi();
-	setColore(colore);
-	this->getAttivo()->setIntensita(20);
+	colori.get(colore)->attiva();
 	setIntensita(intensita);
+	setColore(colore);
+	//this->getAttivo()->setIntensita(20);
 }
 
+/**
+ * @brief set colore
+ *
+ * imposta il colore dalle luce tramite IR e setta il colore attivo
+ * @param colore da attivare
+ * @see MyIR#inviaColore(String)
+ */
 void CLuce::setColore(String colore)
 {
-	Serial.println("colore: " + colore);
-	if (this->getAttivo()->getColore() == colore)
-		return;
+	Serial.println("SET COLORE");
+	Serial.println("colore selezionato: " + colore);
+	//colori.printColoriAttivi();
+	//colori.disattivaTutti();
 	this->getAttivo()->disattiva();
-	if (colore.startsWith("rosso")) {
-		this->colori[ROSSO].attiva();
-		ir.rosso();
+	this->colori.get(colore)->attiva();
+	Serial.println("colore attivato:" + colori.getAttivo()->toString());
+	int index = Colors::getColore(colore);
+	if (colore == ("rosso")) {
+		ir.inviaColore(IR_ROSSO);
 	}
-	else if (colore.startsWith("giallo")) {
-		this->colori[GIALLO].attiva();
-		ir.giallo();
+	else if (colore == ("giallo")) {
+		ir.inviaColore(IR_GIALLO);
+	}
+	else if (colore == "gialloverde") {
+		ir.inviaColore(IR_GIALLO_VERDE);
 	}
 	else if (colore == "verde") {
-		ir.verde();
-		this->colori[VERDE].attiva();
+		ir.inviaColore(IR_VERDE);
 	}
 	else if (colore == "blu") {
-		ir.blu();
-		this->colori[BLU].attiva();
+		ir.inviaColore(IR_BLU);
+	}
+	else if (colore == "bluviola") {
+		ir.inviaColore(IR_BLU_VIOLA);
 	}
 	else if (colore == "arancione") {
-
-		ir.arancione();
-		this->colori[ARANCIONE].attiva();
-	}
-	else if (colore == "azzurro") {
-
-		ir.azzurro();
-		this->colori[AZZURRO].attiva();
-	}
-	else if (colore == "bianco") {
-
-		ir.bianco();
-		this->colori[BIANCO].attiva();
+		ir.inviaColore(IR_ARANCIONE);
 	}
 	else if (colore == "giallancione") {
-
-		ir.giallancione();
-		this->colori[GIALLO_ARANCIO].attiva();
+		ir.inviaColore(IR_GIALLO_ARANCIO);
+	}
+	else if (colore == "azzurro") {
+		ir.inviaColore(IR_AZZURRO);
+	}
+	else if (colore == "azzurrochiaro") {
+		ir.inviaColore(IR_AZZURROCHIARO);
+	}
+	else if (colore == "bianco") {
+		ir.inviaColore(IR_BIANCO);
 	}
 	else if (colore == "rosa") {
-
-		ir.rosa();
-		this->colori[ROSA].attiva();
+		ir.inviaColore(IR_ROSA);
+	}
+	else if (colore == "viola") {
+		ir.inviaColore(IR_VIOLA);
+	}
+	else if (colore == "azzurroverde") {
+		ir.inviaColore(IR_AZZURRO_VERDE);
+	}
+	else if (colore == "azzurroverde2") {
+		ir.inviaColore(IR_AZZURRO_VERDE2);
 	}
 	else if (colore == "rgbLento") {
-
 		ir.RGBlento();
-		this->colori[multicolorLento].attiva();
 	}
 	else if (colore == "rgbVeloce") {
-
 		ir.RGBveloce();
-		this->colori[multicolorVeloce].attiva();
 	}
 	else return;
-	Serial.println(colore);
+
+	//dopo aver cambiato il colore sistemo l'intensità
+	changeIntensita();
 }
 
+void CLuce::setColore(int index)
+{
+	setColore(colori.get(index)->getColore());
+}
+
+/**
+ * @brief set intensità
+ *
+ * modifica l'intensità {@link #intensita}
+ * @see #changeIntensita()
+ */
 void CLuce::setIntensita(int intensita)
 {
-	intensita /= 5;			//trasforma da % a 1-20
-	Serial.println("Intensita: " + String(intensita));
-	if (intensita >= 0 && intensita <= 100)
-	{
-		int diff = this->getAttivo()->getIntensita() - intensita;
-		if (diff >= 0)
-			for (int i = 0; i < diff; i++) {
-				ir.diminuisciIntensita();
-				delay(50);
-			}
-		else
-		{
-			for (int i = diff; i < 0; i++) {
-				ir.aumentaIntensita();
-				delay(50);
-			}
-		}
-		this->getAttivo()->setIntensita(intensita);
-	}
+	if (intensita >= 1 && intensita <= 100)
+		this->intensita = intensita / 5;
+	Serial.println("Intensita: " + String(this->intensita));
+	changeIntensita();
 }
 
+/**
+ * @brief get colore
+ *
+ * @return colore attivo
+ * @see #getAttivo()
+ */
 String CLuce::getColore()
 {
 	return getAttivo()->getColore();
 }
 
+/**
+ * @brief get intensità
+ *
+ * @return intensità {@link #intensita}
+ */
 int CLuce::getIntensita()
 {
-	return getAttivo()->getIntensita() * 5; //trasforma in %
+	//return getAttivo()->getIntensita() * 5; //trasforma in %
+	return intensita * 5;
 }
 
+/**
+ * @brief get colore attivo
+ *
+ * @return colore attivo
+ * @see CColore#getAttivo()
+ */
 CColore* CLuce::getAttivo()
 {
-	for (int i = 0; i < NUMCOLORI;i++) {
-		if (colori[i].isAttiva())
-			return colori;
-	}
-	return nullptr;
+	return colori.getAttivo();
 }
 
+/**
+ * @brief is accesa
+ *
+ * @return true se la luce è accesa, false se è spenta
+ */
 bool CLuce::isAccesa()
 {
 	return accesa;
+}
+
+/**
+ * @brief get accesa
+ *
+ * @return puntatore a {@link #accesa}
+ */
+bool * CLuce::getAccesa()
+{
+	return &accesa;
+}
+
+/**
+ * @brief get colore
+ *
+ * @return puntatore al vettore dei colori {@link #colori}
+ */
+Colors * CLuce::getColori()
+{
+	return &colori;
+}
+
+/**
+ * @brief change intensità
+ *
+ * Imposta tramite IR l'intensità attuale alla luce, in base all'intensità di ogni colore
+ * @see MyIR#diminuisciIntensita()
+ * @see MyIR#aumentaIntensita()
+ */
+void CLuce::changeIntensita()
+{
+	int diff = this->getAttivo()->getIntensita() - intensita;
+	Serial.println(this->getAttivo()->toString());
+	Serial.println("Intensità colore attivo: " + (String)getAttivo()->getIntensita());
+	if (diff >= 0)
+	{
+		for (int i = 0; i < diff; i++)
+		{
+			Serial.println("diminuisco intensità");
+			ir.diminuisciIntensita();
+			delay(50);
+		}
+	}
+	else
+	{
+		for (int i = diff; i < 0; i++)
+		{
+			Serial.println("aumento intensità");
+			ir.aumentaIntensita();
+			delay(50);
+		}
+	}
+	this->getAttivo()->setIntensita(intensita);
+}
+
+String CLuce::getColoreSimile()
+{
+	String colore = getColore();
+	if (colore == "gialloverde") {
+		return "giallo";
+	}
+	else if (colore == "bluviola") {
+		return "blu";
+	}
+	else if (colore == "giallancione") {
+		return "arancione";//<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else if (colore == "azzurrochiaro") {
+		return "azzurro";
+	}
+	else if (colore == "viola") {
+		return "rosa";
+	}
+	else if (colore == "azzurroverde") {
+		return "azzurro";
+	}
+	else if (colore == "azzurroverde2") {
+		return "azzurro";
+	}
+	else if (colore == "rgbLento") {
+		return ""; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else if (colore == "rgbVeloce") {
+		return ""; //<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<???
+	}
+	else return colore;
+}
+
+void CLuce::setSpegnimentoAutomatico(bool s)
+{
+	spegnimentoAutomatico = s;
+}
+
+bool CLuce::isSpegnimentoAutomatico()
+{
+	return spegnimentoAutomatico;
 }

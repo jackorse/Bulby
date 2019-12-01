@@ -172,6 +172,10 @@ class Adafruit_GFX_Button {
   boolean justPressed();
   boolean justReleased();
 
+
+  void drawButtonSquadrato(boolean inverted = false);
+
+
  private:
   Adafruit_GFX *_gfx;
   int16_t       _x1, _y1; // Coordinates of top-left corner

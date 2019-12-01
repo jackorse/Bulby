@@ -46,16 +46,18 @@
 #include"tab3.h"
 #include"GenericTab.h"
 #include"Adafruit_TFTLCD.h"
+#include"..\Bulby\MyBluetooth.h"
 class finestra : public Adafruit_TFTLCD
 {
 private:
 	TouchScreen* ts;
 	abstractTab* tab;
 	int index;
-	bool accesa;
-	CColore *colore;
+	bool *accesa;
+	CLuce *luce;
+	MyBluetooth* bt;
  public:
-	finestra(bool accesa, CColore *colore);
+	finestra(bool *accesa, CLuce *luce, MyBluetooth* bt);
 	~finestra();
 	void setTab(int index);
 	abstractTab* getTab();
@@ -63,4 +65,3 @@ private:
 
 
 #endif
-

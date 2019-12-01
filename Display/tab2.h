@@ -1,5 +1,3 @@
-// tab2.h
-
 #ifndef _TAB2_h
 #define _TAB2_h
 
@@ -9,23 +7,23 @@
 	#include "WProgram.h"
 #endif
 #include"GenericTab.h"
-#include"CColore.h"
+#include"CLuce.h"
 #define MENO_BUTTON 20
 #define PIU_BUTTON 30
+
 class tab2:public GenericTab
 {
 private:
 	button *piu;
 	button *meno;
-	CColore *colore;
+	CLuce *colore;
+
  public:
-	tab2(Adafruit_GFX* gfx, TouchScreen* ts, CColore* colore);
+	tab2(Adafruit_GFX* gfx, TouchScreen* ts, CLuce* luce);
 	virtual ~tab2();
 	virtual void draw() override;
 	virtual int checkBottoni() override;
 	void printIntensita();
 };
 
-
 #endif
-
